@@ -12,19 +12,23 @@
 		DEEC0B6317CF5D350096B21F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEC0B6217CF5D350096B21F /* CoreGraphics.framework */; };
 		DEEC0B6917CF5D350096B21F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0B6717CF5D350096B21F /* InfoPlist.strings */; };
 		DEEC0B6B17CF5D350096B21F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0B6A17CF5D350096B21F /* main.m */; };
-		DEEC0B6F17CF5D350096B21F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0B6E17CF5D350096B21F /* AppDelegate.m */; };
+		DEEC0B6F17CF5D350096B21F /* goshanAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0B6E17CF5D350096B21F /* goshanAppDelegate.m */; };
 		DEEC0B7117CF5D350096B21F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0B7017CF5D350096B21F /* Default.png */; };
 		DEEC0B7317CF5D350096B21F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0B7217CF5D350096B21F /* Default@2x.png */; };
 		DEEC0B7517CF5D350096B21F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0B7417CF5D350096B21F /* Default-568h@2x.png */; };
-		DEEC0B7817CF5D350096B21F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0B7717CF5D350096B21F /* RootViewController.m */; };
-		DEEC0B7B17CF5D350096B21F /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0B7A17CF5D350096B21F /* DataViewController.m */; };
-		DEEC0B7E17CF5D350096B21F /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0B7D17CF5D350096B21F /* ModelController.m */; };
-		DEEC0B8117CF5D350096B21F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0B7F17CF5D350096B21F /* MainStoryboard.storyboard */; };
 		DEEC0B8917CF5D350096B21F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEC0B8817CF5D350096B21F /* SenTestingKit.framework */; };
 		DEEC0B8A17CF5D350096B21F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEC0B5E17CF5D350096B21F /* UIKit.framework */; };
 		DEEC0B8B17CF5D350096B21F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEC0B6017CF5D350096B21F /* Foundation.framework */; };
 		DEEC0B9317CF5D350096B21F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0B9117CF5D350096B21F /* InfoPlist.strings */; };
 		DEEC0B9617CF5D350096B21F /* PoseidonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0B9517CF5D350096B21F /* PoseidonTests.m */; };
+		DEEC0BB217CF6BA90096B21F /* gAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0BB117CF6BA90096B21F /* gAnimation.m */; };
+		DEEC0BB517CF6DF90096B21F /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0BB417CF6DF90096B21F /* Util.m */; };
+		DEEC0BBE17CF70970096B21F /* motion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0BBD17CF70970096B21F /* motion@2x.png */; };
+		DEEC0BC217CF95660096B21F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0BC017CF95650096B21F /* MainViewController.m */; };
+		DEEC0BC317CF95660096B21F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0BC117CF95650096B21F /* MainViewController.xib */; };
+		DEEC0BC617CF99DB0096B21F /* banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0BC417CF99DB0096B21F /* banner@2x.png */; };
+		DEEC0BD417CFA4E20096B21F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0BD217CFA4E20096B21F /* LoginViewController.m */; };
+		DEEC0BD517CFA4E20096B21F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0BD317CFA4E20096B21F /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,24 +50,29 @@
 		DEEC0B6817CF5D350096B21F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DEEC0B6A17CF5D350096B21F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DEEC0B6C17CF5D350096B21F /* Poseidon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Poseidon-Prefix.pch"; sourceTree = "<group>"; };
-		DEEC0B6D17CF5D350096B21F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		DEEC0B6E17CF5D350096B21F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DEEC0B6D17CF5D350096B21F /* goshanAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goshanAppDelegate.h; sourceTree = "<group>"; };
+		DEEC0B6E17CF5D350096B21F /* goshanAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = goshanAppDelegate.m; sourceTree = "<group>"; };
 		DEEC0B7017CF5D350096B21F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		DEEC0B7217CF5D350096B21F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		DEEC0B7417CF5D350096B21F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		DEEC0B7617CF5D350096B21F /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		DEEC0B7717CF5D350096B21F /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		DEEC0B7917CF5D350096B21F /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
-		DEEC0B7A17CF5D350096B21F /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
-		DEEC0B7C17CF5D350096B21F /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
-		DEEC0B7D17CF5D350096B21F /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
-		DEEC0B8017CF5D350096B21F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DEEC0B8717CF5D350096B21F /* PoseidonTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoseidonTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEEC0B8817CF5D350096B21F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		DEEC0B9017CF5D350096B21F /* PoseidonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PoseidonTests-Info.plist"; sourceTree = "<group>"; };
 		DEEC0B9217CF5D350096B21F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DEEC0B9417CF5D350096B21F /* PoseidonTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoseidonTests.h; sourceTree = "<group>"; };
 		DEEC0B9517CF5D350096B21F /* PoseidonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PoseidonTests.m; sourceTree = "<group>"; };
+		DEEC0BB017CF6BA90096B21F /* gAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gAnimation.h; sourceTree = "<group>"; };
+		DEEC0BB117CF6BA90096B21F /* gAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gAnimation.m; sourceTree = "<group>"; };
+		DEEC0BB317CF6DF90096B21F /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		DEEC0BB417CF6DF90096B21F /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		DEEC0BBD17CF70970096B21F /* motion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "motion@2x.png"; sourceTree = "<group>"; };
+		DEEC0BBF17CF95650096B21F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		DEEC0BC017CF95650096B21F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		DEEC0BC117CF95650096B21F /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		DEEC0BC417CF99DB0096B21F /* banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "banner@2x.png"; sourceTree = "<group>"; };
+		DEEC0BD117CFA4E20096B21F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		DEEC0BD217CFA4E20096B21F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		DEEC0BD317CFA4E20096B21F /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,15 +132,14 @@
 		DEEC0B6417CF5D350096B21F /* Poseidon */ = {
 			isa = PBXGroup;
 			children = (
-				DEEC0B6D17CF5D350096B21F /* AppDelegate.h */,
-				DEEC0B6E17CF5D350096B21F /* AppDelegate.m */,
-				DEEC0B7617CF5D350096B21F /* RootViewController.h */,
-				DEEC0B7717CF5D350096B21F /* RootViewController.m */,
-				DEEC0B7917CF5D350096B21F /* DataViewController.h */,
-				DEEC0B7A17CF5D350096B21F /* DataViewController.m */,
-				DEEC0B7C17CF5D350096B21F /* ModelController.h */,
-				DEEC0B7D17CF5D350096B21F /* ModelController.m */,
-				DEEC0B7F17CF5D350096B21F /* MainStoryboard.storyboard */,
+				DEEC0B6D17CF5D350096B21F /* goshanAppDelegate.h */,
+				DEEC0B6E17CF5D350096B21F /* goshanAppDelegate.m */,
+				DEEC0BAF17CF6B990096B21F /* Utils */,
+				DEEC0BD017CFA4AF0096B21F /* Controllers */,
+				DEEC0BCF17CFA4A80096B21F /* Views */,
+				DEEC0BD617CFA88C0096B21F /* Plugins */,
+				DEEC0BCE17CFA49C0096B21F /* Models */,
+				DEEC0BAA17CF64F80096B21F /* Resources */,
 				DEEC0B6517CF5D350096B21F /* Supporting Files */,
 			);
 			path = Poseidon;
@@ -168,6 +176,60 @@
 				DEEC0B9117CF5D350096B21F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DEEC0BAA17CF64F80096B21F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DEEC0BC417CF99DB0096B21F /* banner@2x.png */,
+				DEEC0BBD17CF70970096B21F /* motion@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		DEEC0BAF17CF6B990096B21F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DEEC0BB317CF6DF90096B21F /* Util.h */,
+				DEEC0BB417CF6DF90096B21F /* Util.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		DEEC0BCE17CFA49C0096B21F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DEEC0BCF17CFA4A80096B21F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEEC0BC117CF95650096B21F /* MainViewController.xib */,
+				DEEC0BD317CFA4E20096B21F /* LoginViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DEEC0BD017CFA4AF0096B21F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DEEC0BBF17CF95650096B21F /* MainViewController.h */,
+				DEEC0BC017CF95650096B21F /* MainViewController.m */,
+				DEEC0BD117CFA4E20096B21F /* LoginViewController.h */,
+				DEEC0BD217CFA4E20096B21F /* LoginViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DEEC0BD617CFA88C0096B21F /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				DEEC0BB017CF6BA90096B21F /* gAnimation.h */,
+				DEEC0BB117CF6BA90096B21F /* gAnimation.m */,
+			);
+			name = Plugins;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +307,10 @@
 				DEEC0B7117CF5D350096B21F /* Default.png in Resources */,
 				DEEC0B7317CF5D350096B21F /* Default@2x.png in Resources */,
 				DEEC0B7517CF5D350096B21F /* Default-568h@2x.png in Resources */,
-				DEEC0B8117CF5D350096B21F /* MainStoryboard.storyboard in Resources */,
+				DEEC0BBE17CF70970096B21F /* motion@2x.png in Resources */,
+				DEEC0BC317CF95660096B21F /* MainViewController.xib in Resources */,
+				DEEC0BC617CF99DB0096B21F /* banner@2x.png in Resources */,
+				DEEC0BD517CFA4E20096B21F /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,10 +346,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEEC0B6B17CF5D350096B21F /* main.m in Sources */,
-				DEEC0B6F17CF5D350096B21F /* AppDelegate.m in Sources */,
-				DEEC0B7817CF5D350096B21F /* RootViewController.m in Sources */,
-				DEEC0B7B17CF5D350096B21F /* DataViewController.m in Sources */,
-				DEEC0B7E17CF5D350096B21F /* ModelController.m in Sources */,
+				DEEC0B6F17CF5D350096B21F /* goshanAppDelegate.m in Sources */,
+				DEEC0BB217CF6BA90096B21F /* gAnimation.m in Sources */,
+				DEEC0BB517CF6DF90096B21F /* Util.m in Sources */,
+				DEEC0BC217CF95660096B21F /* MainViewController.m in Sources */,
+				DEEC0BD417CFA4E20096B21F /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,14 +379,6 @@
 				DEEC0B6817CF5D350096B21F /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		DEEC0B7F17CF5D350096B21F /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DEEC0B8017CF5D350096B21F /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		DEEC0B9117CF5D350096B21F /* InfoPlist.strings */ = {

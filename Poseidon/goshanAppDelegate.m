@@ -6,19 +6,37 @@
 //  Copyright (c) 2013年 goshan. All rights reserved.
 //
 
-#import "AppDelegate.h"
 
-@implementation AppDelegate
+#import "goshanAppDelegate.h"
+#import "Util.h"
+#import "MainViewController.h"
+#import "LoginViewController.h"
+
+@implementation goshanAppDelegate
+
+@synthesize window = _window;
+@synthesize navController = _navController;
 
 - (void)dealloc
 {
     [_window release];
+    [_navController release];
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
+    MainViewController *main = [[[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil] autorelease];
+    LoginViewController *login = [[[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil] autorelease];
+    _navController = [[UINavigationController alloc] initWithRootViewController:login];
+    [_navController.view setFrame:statusFullScreenRect];
+    [self.window addSubview:_navController.view];
+    [self.window addSubview:main.view];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
