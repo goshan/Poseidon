@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DEEC0B5F17CF5D350096B21F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEC0B5E17CF5D350096B21F /* UIKit.framework */; };
+		DEEC0B6117CF5D350096B21F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEC0B6017CF5D350096B21F /* Foundation.framework */; };
+		DEEC0B6317CF5D350096B21F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEC0B6217CF5D350096B21F /* CoreGraphics.framework */; };
+		DEEC0B6917CF5D350096B21F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0B6717CF5D350096B21F /* InfoPlist.strings */; };
+		DEEC0B6B17CF5D350096B21F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0B6A17CF5D350096B21F /* main.m */; };
+		DEEC0B6F17CF5D350096B21F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0B6E17CF5D350096B21F /* AppDelegate.m */; };
+		DEEC0B7117CF5D350096B21F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0B7017CF5D350096B21F /* Default.png */; };
+		DEEC0B7317CF5D350096B21F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0B7217CF5D350096B21F /* Default@2x.png */; };
+		DEEC0B7517CF5D350096B21F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0B7417CF5D350096B21F /* Default-568h@2x.png */; };
+		DEEC0B7817CF5D350096B21F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0B7717CF5D350096B21F /* RootViewController.m */; };
+		DEEC0B7B17CF5D350096B21F /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0B7A17CF5D350096B21F /* DataViewController.m */; };
+		DEEC0B7E17CF5D350096B21F /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0B7D17CF5D350096B21F /* ModelController.m */; };
+		DEEC0B8117CF5D350096B21F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0B7F17CF5D350096B21F /* MainStoryboard.storyboard */; };
+		DEEC0B8917CF5D350096B21F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEC0B8817CF5D350096B21F /* SenTestingKit.framework */; };
+		DEEC0B8A17CF5D350096B21F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEC0B5E17CF5D350096B21F /* UIKit.framework */; };
+		DEEC0B8B17CF5D350096B21F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEC0B6017CF5D350096B21F /* Foundation.framework */; };
+		DEEC0B9317CF5D350096B21F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0B9117CF5D350096B21F /* InfoPlist.strings */; };
+		DEEC0B9617CF5D350096B21F /* PoseidonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0B9517CF5D350096B21F /* PoseidonTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DEEC0B8C17CF5D350096B21F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEEC0B5317CF5D350096B21F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEEC0B5A17CF5D350096B21F;
+			remoteInfo = Poseidon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DEEC0B5B17CF5D350096B21F /* Poseidon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poseidon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEEC0B5E17CF5D350096B21F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DEEC0B6017CF5D350096B21F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DEEC0B6217CF5D350096B21F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DEEC0B6617CF5D350096B21F /* Poseidon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Poseidon-Info.plist"; sourceTree = "<group>"; };
+		DEEC0B6817CF5D350096B21F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DEEC0B6A17CF5D350096B21F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DEEC0B6C17CF5D350096B21F /* Poseidon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Poseidon-Prefix.pch"; sourceTree = "<group>"; };
+		DEEC0B6D17CF5D350096B21F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DEEC0B6E17CF5D350096B21F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DEEC0B7017CF5D350096B21F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		DEEC0B7217CF5D350096B21F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DEEC0B7417CF5D350096B21F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DEEC0B7617CF5D350096B21F /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		DEEC0B7717CF5D350096B21F /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		DEEC0B7917CF5D350096B21F /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
+		DEEC0B7A17CF5D350096B21F /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
+		DEEC0B7C17CF5D350096B21F /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
+		DEEC0B7D17CF5D350096B21F /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
+		DEEC0B8017CF5D350096B21F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		DEEC0B8717CF5D350096B21F /* PoseidonTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoseidonTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEEC0B8817CF5D350096B21F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		DEEC0B9017CF5D350096B21F /* PoseidonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PoseidonTests-Info.plist"; sourceTree = "<group>"; };
+		DEEC0B9217CF5D350096B21F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DEEC0B9417CF5D350096B21F /* PoseidonTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoseidonTests.h; sourceTree = "<group>"; };
+		DEEC0B9517CF5D350096B21F /* PoseidonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PoseidonTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DEEC0B5817CF5D350096B21F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEEC0B5F17CF5D350096B21F /* UIKit.framework in Frameworks */,
+				DEEC0B6117CF5D350096B21F /* Foundation.framework in Frameworks */,
+				DEEC0B6317CF5D350096B21F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEEC0B8317CF5D350096B21F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEEC0B8917CF5D350096B21F /* SenTestingKit.framework in Frameworks */,
+				DEEC0B8A17CF5D350096B21F /* UIKit.framework in Frameworks */,
+				DEEC0B8B17CF5D350096B21F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DEEC0B5217CF5D350096B21F = {
+			isa = PBXGroup;
+			children = (
+				DEEC0B6417CF5D350096B21F /* Poseidon */,
+				DEEC0B8E17CF5D350096B21F /* PoseidonTests */,
+				DEEC0B5D17CF5D350096B21F /* Frameworks */,
+				DEEC0B5C17CF5D350096B21F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DEEC0B5C17CF5D350096B21F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DEEC0B5B17CF5D350096B21F /* Poseidon.app */,
+				DEEC0B8717CF5D350096B21F /* PoseidonTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DEEC0B5D17CF5D350096B21F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEEC0B5E17CF5D350096B21F /* UIKit.framework */,
+				DEEC0B6017CF5D350096B21F /* Foundation.framework */,
+				DEEC0B6217CF5D350096B21F /* CoreGraphics.framework */,
+				DEEC0B8817CF5D350096B21F /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEEC0B6417CF5D350096B21F /* Poseidon */ = {
+			isa = PBXGroup;
+			children = (
+				DEEC0B6D17CF5D350096B21F /* AppDelegate.h */,
+				DEEC0B6E17CF5D350096B21F /* AppDelegate.m */,
+				DEEC0B7617CF5D350096B21F /* RootViewController.h */,
+				DEEC0B7717CF5D350096B21F /* RootViewController.m */,
+				DEEC0B7917CF5D350096B21F /* DataViewController.h */,
+				DEEC0B7A17CF5D350096B21F /* DataViewController.m */,
+				DEEC0B7C17CF5D350096B21F /* ModelController.h */,
+				DEEC0B7D17CF5D350096B21F /* ModelController.m */,
+				DEEC0B7F17CF5D350096B21F /* MainStoryboard.storyboard */,
+				DEEC0B6517CF5D350096B21F /* Supporting Files */,
+			);
+			path = Poseidon;
+			sourceTree = "<group>";
+		};
+		DEEC0B6517CF5D350096B21F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DEEC0B6617CF5D350096B21F /* Poseidon-Info.plist */,
+				DEEC0B6717CF5D350096B21F /* InfoPlist.strings */,
+				DEEC0B6A17CF5D350096B21F /* main.m */,
+				DEEC0B6C17CF5D350096B21F /* Poseidon-Prefix.pch */,
+				DEEC0B7017CF5D350096B21F /* Default.png */,
+				DEEC0B7217CF5D350096B21F /* Default@2x.png */,
+				DEEC0B7417CF5D350096B21F /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DEEC0B8E17CF5D350096B21F /* PoseidonTests */ = {
+			isa = PBXGroup;
+			children = (
+				DEEC0B9417CF5D350096B21F /* PoseidonTests.h */,
+				DEEC0B9517CF5D350096B21F /* PoseidonTests.m */,
+				DEEC0B8F17CF5D350096B21F /* Supporting Files */,
+			);
+			path = PoseidonTests;
+			sourceTree = "<group>";
+		};
+		DEEC0B8F17CF5D350096B21F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DEEC0B9017CF5D350096B21F /* PoseidonTests-Info.plist */,
+				DEEC0B9117CF5D350096B21F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DEEC0B5A17CF5D350096B21F /* Poseidon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEEC0B9917CF5D350096B21F /* Build configuration list for PBXNativeTarget "Poseidon" */;
+			buildPhases = (
+				DEEC0B5717CF5D350096B21F /* Sources */,
+				DEEC0B5817CF5D350096B21F /* Frameworks */,
+				DEEC0B5917CF5D350096B21F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Poseidon;
+			productName = Poseidon;
+			productReference = DEEC0B5B17CF5D350096B21F /* Poseidon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DEEC0B8617CF5D350096B21F /* PoseidonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEEC0B9C17CF5D350096B21F /* Build configuration list for PBXNativeTarget "PoseidonTests" */;
+			buildPhases = (
+				DEEC0B8217CF5D350096B21F /* Sources */,
+				DEEC0B8317CF5D350096B21F /* Frameworks */,
+				DEEC0B8417CF5D350096B21F /* Resources */,
+				DEEC0B8517CF5D350096B21F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DEEC0B8D17CF5D350096B21F /* PBXTargetDependency */,
+			);
+			name = PoseidonTests;
+			productName = PoseidonTests;
+			productReference = DEEC0B8717CF5D350096B21F /* PoseidonTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DEEC0B5317CF5D350096B21F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = goshan;
+			};
+			buildConfigurationList = DEEC0B5617CF5D350096B21F /* Build configuration list for PBXProject "Poseidon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DEEC0B5217CF5D350096B21F;
+			productRefGroup = DEEC0B5C17CF5D350096B21F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DEEC0B5A17CF5D350096B21F /* Poseidon */,
+				DEEC0B8617CF5D350096B21F /* PoseidonTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DEEC0B5917CF5D350096B21F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEEC0B6917CF5D350096B21F /* InfoPlist.strings in Resources */,
+				DEEC0B7117CF5D350096B21F /* Default.png in Resources */,
+				DEEC0B7317CF5D350096B21F /* Default@2x.png in Resources */,
+				DEEC0B7517CF5D350096B21F /* Default-568h@2x.png in Resources */,
+				DEEC0B8117CF5D350096B21F /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEEC0B8417CF5D350096B21F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEEC0B9317CF5D350096B21F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DEEC0B8517CF5D350096B21F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DEEC0B5717CF5D350096B21F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEEC0B6B17CF5D350096B21F /* main.m in Sources */,
+				DEEC0B6F17CF5D350096B21F /* AppDelegate.m in Sources */,
+				DEEC0B7817CF5D350096B21F /* RootViewController.m in Sources */,
+				DEEC0B7B17CF5D350096B21F /* DataViewController.m in Sources */,
+				DEEC0B7E17CF5D350096B21F /* ModelController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEEC0B8217CF5D350096B21F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEEC0B9617CF5D350096B21F /* PoseidonTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DEEC0B8D17CF5D350096B21F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEEC0B5A17CF5D350096B21F /* Poseidon */;
+			targetProxy = DEEC0B8C17CF5D350096B21F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DEEC0B6717CF5D350096B21F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEEC0B6817CF5D350096B21F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DEEC0B7F17CF5D350096B21F /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEEC0B8017CF5D350096B21F /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		DEEC0B9117CF5D350096B21F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEEC0B9217CF5D350096B21F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DEEC0B9717CF5D350096B21F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DEEC0B9817CF5D350096B21F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DEEC0B9A17CF5D350096B21F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Poseidon/Poseidon-Prefix.pch";
+				INFOPLIST_FILE = "Poseidon/Poseidon-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DEEC0B9B17CF5D350096B21F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Poseidon/Poseidon-Prefix.pch";
+				INFOPLIST_FILE = "Poseidon/Poseidon-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DEEC0B9D17CF5D350096B21F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Poseidon.app/Poseidon";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Poseidon/Poseidon-Prefix.pch";
+				INFOPLIST_FILE = "PoseidonTests/PoseidonTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DEEC0B9E17CF5D350096B21F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Poseidon.app/Poseidon";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Poseidon/Poseidon-Prefix.pch";
+				INFOPLIST_FILE = "PoseidonTests/PoseidonTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DEEC0B5617CF5D350096B21F /* Build configuration list for PBXProject "Poseidon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEEC0B9717CF5D350096B21F /* Debug */,
+				DEEC0B9817CF5D350096B21F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEEC0B9917CF5D350096B21F /* Build configuration list for PBXNativeTarget "Poseidon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEEC0B9A17CF5D350096B21F /* Debug */,
+				DEEC0B9B17CF5D350096B21F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DEEC0B9C17CF5D350096B21F /* Build configuration list for PBXNativeTarget "PoseidonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEEC0B9D17CF5D350096B21F /* Debug */,
+				DEEC0B9E17CF5D350096B21F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DEEC0B5317CF5D350096B21F /* Project object */;
+}
