@@ -10,11 +10,11 @@
 
 @interface MainViewController : UIViewController
 
+@property (retain, nonatomic) UIImageView *cover;
 
-@property (retain, nonatomic) IBOutlet UIButton *button;
+@property (retain, nonatomic) UIButton *button;
+
 @property(retain, nonatomic) NSTimer *blinkTimer;
 
-
-- (IBAction)arrowClick:(id)sender;
 
 @end

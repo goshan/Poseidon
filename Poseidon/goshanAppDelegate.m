@@ -30,10 +30,11 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     MainViewController *main = [[[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil] autorelease];
-    LoginViewController *login = [[[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil] autorelease];
-    _navController = [[UINavigationController alloc] initWithRootViewController:login];
+    LoginViewController *login = [[LoginViewController alloc] init];
+    //_navController = [[UINavigationController alloc] initWithRootViewController:login];
     [_navController.view setFrame:statusFullScreenRect];
     [self.window addSubview:_navController.view];
+    [self.window addSubview:login.view];
     [self.window addSubview:main.view];
     [self.window makeKeyAndVisible];
     

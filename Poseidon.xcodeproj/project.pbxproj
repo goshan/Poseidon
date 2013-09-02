@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE0186F217D4A41100358965 /* banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0186F117D4A41100358965 /* banner@2x.png */; };
+		DE0186F417D4A50000358965 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0186F317D4A50000358965 /* icon.png */; };
+		DE0186F617D4AD0E00358965 /* fullScreenBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0186F517D4AD0E00358965 /* fullScreenBg@2x.png */; };
+		DE0186F817D4AD7700358965 /* loginText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0186F717D4AD7700358965 /* loginText@2x.png */; };
+		DE0186FB17D4AE5600358965 /* loginPW@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0186F917D4AE5600358965 /* loginPW@2x.png */; };
+		DE0186FC17D4AE5600358965 /* loginUsername@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0186FA17D4AE5600358965 /* loginUsername@2x.png */; };
+		DE0186FE17D4AF8D00358965 /* loginInput@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0186FD17D4AF8D00358965 /* loginInput@2x.png */; };
+		DE01870417D5012200358965 /* loginButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE01870217D5012200358965 /* loginButton@2x.png */; };
+		DE01870517D5012200358965 /* loginButtonClick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE01870317D5012200358965 /* loginButtonClick@2x.png */; };
+		DE01870817D5048400358965 /* loginEBText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE01870617D5048400358965 /* loginEBText@2x.png */; };
+		DE01870917D5048400358965 /* loginLogoLarge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE01870717D5048400358965 /* loginLogoLarge@2x.png */; };
+		DE01870B17D5061700358965 /* loginLogoSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE01870A17D5061700358965 /* loginLogoSmall@2x.png */; };
 		DEEC0B5F17CF5D350096B21F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEC0B5E17CF5D350096B21F /* UIKit.framework */; };
 		DEEC0B6117CF5D350096B21F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEC0B6017CF5D350096B21F /* Foundation.framework */; };
 		DEEC0B6317CF5D350096B21F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEC0B6217CF5D350096B21F /* CoreGraphics.framework */; };
@@ -25,10 +37,7 @@
 		DEEC0BB517CF6DF90096B21F /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0BB417CF6DF90096B21F /* Util.m */; };
 		DEEC0BBE17CF70970096B21F /* motion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0BBD17CF70970096B21F /* motion@2x.png */; };
 		DEEC0BC217CF95660096B21F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0BC017CF95650096B21F /* MainViewController.m */; };
-		DEEC0BC317CF95660096B21F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0BC117CF95650096B21F /* MainViewController.xib */; };
-		DEEC0BC617CF99DB0096B21F /* banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0BC417CF99DB0096B21F /* banner@2x.png */; };
 		DEEC0BD417CFA4E20096B21F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEC0BD217CFA4E20096B21F /* LoginViewController.m */; };
-		DEEC0BD517CFA4E20096B21F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEEC0BD317CFA4E20096B21F /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +51,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE0186F117D4A41100358965 /* banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "banner@2x.png"; sourceTree = "<group>"; };
+		DE0186F317D4A50000358965 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		DE0186F517D4AD0E00358965 /* fullScreenBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fullScreenBg@2x.png"; sourceTree = "<group>"; };
+		DE0186F717D4AD7700358965 /* loginText@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginText@2x.png"; sourceTree = "<group>"; };
+		DE0186F917D4AE5600358965 /* loginPW@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginPW@2x.png"; sourceTree = "<group>"; };
+		DE0186FA17D4AE5600358965 /* loginUsername@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginUsername@2x.png"; sourceTree = "<group>"; };
+		DE0186FD17D4AF8D00358965 /* loginInput@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginInput@2x.png"; sourceTree = "<group>"; };
+		DE01870217D5012200358965 /* loginButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginButton@2x.png"; sourceTree = "<group>"; };
+		DE01870317D5012200358965 /* loginButtonClick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginButtonClick@2x.png"; sourceTree = "<group>"; };
+		DE01870617D5048400358965 /* loginEBText@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginEBText@2x.png"; sourceTree = "<group>"; };
+		DE01870717D5048400358965 /* loginLogoLarge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginLogoLarge@2x.png"; sourceTree = "<group>"; };
+		DE01870A17D5061700358965 /* loginLogoSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginLogoSmall@2x.png"; sourceTree = "<group>"; };
 		DEEC0B5B17CF5D350096B21F /* Poseidon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poseidon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEEC0B5E17CF5D350096B21F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DEEC0B6017CF5D350096B21F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,11 +89,8 @@
 		DEEC0BBD17CF70970096B21F /* motion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "motion@2x.png"; sourceTree = "<group>"; };
 		DEEC0BBF17CF95650096B21F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		DEEC0BC017CF95650096B21F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		DEEC0BC117CF95650096B21F /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		DEEC0BC417CF99DB0096B21F /* banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "banner@2x.png"; sourceTree = "<group>"; };
 		DEEC0BD117CFA4E20096B21F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		DEEC0BD217CFA4E20096B21F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		DEEC0BD317CFA4E20096B21F /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,9 +170,6 @@
 				DEEC0B6717CF5D350096B21F /* InfoPlist.strings */,
 				DEEC0B6A17CF5D350096B21F /* main.m */,
 				DEEC0B6C17CF5D350096B21F /* Poseidon-Prefix.pch */,
-				DEEC0B7017CF5D350096B21F /* Default.png */,
-				DEEC0B7217CF5D350096B21F /* Default@2x.png */,
-				DEEC0B7417CF5D350096B21F /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -181,7 +196,21 @@
 		DEEC0BAA17CF64F80096B21F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DEEC0BC417CF99DB0096B21F /* banner@2x.png */,
+				DE01870A17D5061700358965 /* loginLogoSmall@2x.png */,
+				DE01870617D5048400358965 /* loginEBText@2x.png */,
+				DE01870717D5048400358965 /* loginLogoLarge@2x.png */,
+				DE01870217D5012200358965 /* loginButton@2x.png */,
+				DE01870317D5012200358965 /* loginButtonClick@2x.png */,
+				DE0186FD17D4AF8D00358965 /* loginInput@2x.png */,
+				DE0186F917D4AE5600358965 /* loginPW@2x.png */,
+				DE0186FA17D4AE5600358965 /* loginUsername@2x.png */,
+				DE0186F717D4AD7700358965 /* loginText@2x.png */,
+				DE0186F517D4AD0E00358965 /* fullScreenBg@2x.png */,
+				DE0186F317D4A50000358965 /* icon.png */,
+				DEEC0B7017CF5D350096B21F /* Default.png */,
+				DEEC0B7217CF5D350096B21F /* Default@2x.png */,
+				DEEC0B7417CF5D350096B21F /* Default-568h@2x.png */,
+				DE0186F117D4A41100358965 /* banner@2x.png */,
 				DEEC0BBD17CF70970096B21F /* motion@2x.png */,
 			);
 			name = Resources;
@@ -206,8 +235,6 @@
 		DEEC0BCF17CFA4A80096B21F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DEEC0BC117CF95650096B21F /* MainViewController.xib */,
-				DEEC0BD317CFA4E20096B21F /* LoginViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -308,9 +335,18 @@
 				DEEC0B7317CF5D350096B21F /* Default@2x.png in Resources */,
 				DEEC0B7517CF5D350096B21F /* Default-568h@2x.png in Resources */,
 				DEEC0BBE17CF70970096B21F /* motion@2x.png in Resources */,
-				DEEC0BC317CF95660096B21F /* MainViewController.xib in Resources */,
-				DEEC0BC617CF99DB0096B21F /* banner@2x.png in Resources */,
-				DEEC0BD517CFA4E20096B21F /* LoginViewController.xib in Resources */,
+				DE0186F217D4A41100358965 /* banner@2x.png in Resources */,
+				DE0186F417D4A50000358965 /* icon.png in Resources */,
+				DE0186F617D4AD0E00358965 /* fullScreenBg@2x.png in Resources */,
+				DE0186F817D4AD7700358965 /* loginText@2x.png in Resources */,
+				DE0186FB17D4AE5600358965 /* loginPW@2x.png in Resources */,
+				DE0186FC17D4AE5600358965 /* loginUsername@2x.png in Resources */,
+				DE0186FE17D4AF8D00358965 /* loginInput@2x.png in Resources */,
+				DE01870417D5012200358965 /* loginButton@2x.png in Resources */,
+				DE01870517D5012200358965 /* loginButtonClick@2x.png in Resources */,
+				DE01870817D5048400358965 /* loginEBText@2x.png in Resources */,
+				DE01870917D5048400358965 /* loginLogoLarge@2x.png in Resources */,
+				DE01870B17D5061700358965 /* loginLogoSmall@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +439,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: WANXIN YANG (KHUR99HEGS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -418,6 +455,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "507B66B6-37C8-47B7-8F71-BDBFC0DEA3E3";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -433,6 +471,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: WANXIN YANG (KHUR99HEGS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -441,6 +480,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "507B66B6-37C8-47B7-8F71-BDBFC0DEA3E3";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -521,6 +561,7 @@
 				DEEC0B9B17CF5D350096B21F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DEEC0B9C17CF5D350096B21F /* Build configuration list for PBXNativeTarget "PoseidonTests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +570,7 @@
 				DEEC0B9E17CF5D350096B21F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
