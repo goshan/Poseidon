@@ -19,6 +19,8 @@
 
 @property (retain, nonatomic) LoginViewController *login;
 
+@property (retain, nonatomic) UINavigationController *nav;
+
 
 
 

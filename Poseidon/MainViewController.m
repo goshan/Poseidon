@@ -24,7 +24,7 @@ BOOL isBlink = YES;
 @synthesize button = _button;
 @synthesize blinkTimer = _blinkTimer;
 @synthesize login = _login;
-
+@synthesize nav = _nav;
 
 
 
@@ -69,7 +69,7 @@ BOOL isBlink = YES;
         admin = [[AdminViewController alloc] init];
     }
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:admin];
+    _nav = [[UINavigationController alloc] initWithRootViewController:admin];
     [admin release];
     
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -79,7 +79,7 @@ BOOL isBlink = YES;
     [UIView setAnimationDuration:loadingFinishedAnimate];
     
     [_login.view removeFromSuperview];
-    [self.view addSubview:nav.view];
+    [self.view addSubview:_nav.view];
     [UIView commitAnimations];
 }
 
@@ -90,9 +90,9 @@ BOOL isBlink = YES;
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     [UIView setAnimationDuration:loadingFinishedAnimate];
     
-    [nav.view removeFromSuperview];
+    [_nav.view removeFromSuperview];
     [self.view addSubview:_login.view];
-    [nav release];
+    [_nav release];
     
     [UIView commitAnimations];
 }
