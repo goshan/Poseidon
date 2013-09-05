@@ -16,23 +16,38 @@
 
 @synthesize tableView = _tableView;
 @synthesize bg = _bg;
-@synthesize data = _data;
+@synthesize main = _main;
+@synthesize content = _content;
 
-- (id)initWithData:(NSArray *)data{
+
+
+
+
+- (void)logout{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:user_token];
+    
+    [_main logoutViewSwitch:self.navigationController];
+}
+
+
+- (id)initWithData:(NSArray *)data andMainController:(MainViewController *)main{
     self = [super init];
     if (self) {
         // Custom initialization
         _bg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
-        _data = data;
+        self.main = main;
+        self.content = data;
     }
     return self;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg1"] forBarMetrics:UIBarMetricsDefault];
-    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStyleBordered target:self action:@selector(showRegistPage)] autorelease];
-    [self.navigationItem.rightBarButtonItem setBackgroundImage:[UIImage imageNamed:@"navigation_item_bg"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"connectionNav"] forBarMetrics:UIBarMetricsDefault];
+    self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:self action:@selector(logout)] autorelease];
+    [self.navigationItem.leftBarButtonItem setBackgroundImage:[UIImage imageNamed:@"backButton"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self.navigationItem.leftBarButtonItem setBackgroundImage:[UIImage imageNamed:@"backButtonClick"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewDidLoad
@@ -42,9 +57,11 @@
     [_bg setImage:[UIImage imageNamed:@"backgroundSmall"]];
     [self.view addSubview:_bg];
     
+    [_tableView setBackgroundColor:[UIColor clearColor]];
+    [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     _tableView.delegate = self;
+    _tableView.dataSource = self;
     [self.view addSubview:_tableView];
-    
     
 }
 
@@ -58,19 +75,21 @@
 {
     [self setTableView:nil];
     [self setBg:nil];
-    [self setData:nil];
+    [self setMain:nil];
+    [self setContent:nil];
     [super viewDidUnload];
 }
 
 - (void)dealloc {
     [_tableView release];
     [_bg release];
-    [_data release];
+    [_main release];
+    [_content release];
     [super dealloc];
 }
 
 
-/*
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -82,37 +101,51 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [_data count];
+    return [_content count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"indexCell_id";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:connection_cell];
     if (cell == nil) {
-        NSArray* objects =  [[NSBundle  mainBundle] loadNibNamed:@"indexCell" owner:nil options:nil];
+        NSArray* objects =  [[NSBundle  mainBundle] loadNibNamed:@"ConnectionCell" owner:nil options:nil];
         cell = [objects objectAtIndex:0];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    NSDictionary *book = [_bookIndex bookInfoAtIndex:indexPath.row];
+    NSDictionary *topic = [_content objectAtIndex:indexPath.row];
     
     // Set up the cell...
-    UIImageView* bookImage = (UIImageView*)[cell viewWithTag:1];
-    UILabel* bookName = (UILabel*)[cell viewWithTag:2];
+    UIImageView* cellBg = (UIImageView*)[cell viewWithTag:1];
+    UILabel* cellTitle = (UILabel*)[cell viewWithTag:2];
+    UILabel* cellContent = (UILabel*)[cell viewWithTag:3];
     
-    [bookImage setImage:[UIImage imageNamed:[book objectForKey:IMAGEFILE]]];
-    bookName.text = [NSString stringWithString:[book objectForKey:BOOKNAME]];
+    if (indexPath.row == 0){
+        [cellBg setImage:[UIImage imageNamed:@"connectionTableTop"]];
+    }
+    else if (indexPath.row == _content.count-1){
+        [cellBg setImage:[UIImage imageNamed:@"connectionTableBottom"]];
+    }
+    else {
+        [cellBg setImage:[UIImage imageNamed:@"connectionTable"]];
+    }
     
-    //make image round
-    CALayer *layer = bookImage.layer;
-    layer.masksToBounds = YES;
-    layer.cornerRadius = 5.0;
+    cellTitle.text = [NSString stringWithString:[topic objectForKey:@"title"]];
+    [cellTitle setTextColor:[UIColor whiteColor]];
+    [cellTitle setFont:[UIFont systemFontOfSize:13]];
+    
+    NSString *contentShow = [NSString stringWithString:[topic objectForKey:@"content"]];
+    cellContent.text = (contentShow.length < connectionContentLength ? contentShow : [[contentShow substringToIndex:connectionContentLength] stringByAppendingString:@"..."]);
+    [cellContent setTextColor:[UIColor whiteColor]];
+    [cellContent setFont:[UIFont systemFontOfSize:14]];
+    cellContent.lineBreakMode = NSLineBreakByWordWrapping;
+    cellContent.numberOfLines = 0;
+    [cellContent sizeToFit];
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     return cell;
 }
-
+/*
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [_parent showSpinner];
@@ -125,9 +158,9 @@
     }
     
 }
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 70.0;
-}
 */
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 125.0;
+}
+
 @end

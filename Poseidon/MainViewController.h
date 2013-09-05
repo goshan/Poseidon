@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
-#import "AdminViewController.h"
 
 @interface MainViewController : UIViewController
 

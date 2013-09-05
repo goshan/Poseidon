@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainViewController.h"
+
+
 
 @interface AdminViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
@@ -14,11 +17,13 @@
 
 @property (retain, nonatomic) UIImageView *bg;
 
-@property (retain, nonatomic) NSArray *data;
+@property (retain, nonatomic) NSArray *content;
+
+@property (retain, nonatomic) MainViewController *main;
 
 
 
 
-- (id)initWithData:(NSArray *)data;
+- (id)initWithData:(NSArray *)data andMainController:(MainViewController *)main;
 
 @end

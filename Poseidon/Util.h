@@ -8,6 +8,7 @@
 
 
 
+//size
 
 #define allFullScreenRect CGRectMake(0, 0, 320, 480)
 #define statusFullScreenRect CGRectMake(0, 20, 320, 460)
@@ -21,10 +22,21 @@
 #define statusFullScreenY 20
 #define navFullScreenY 64
 
+#define connectionContentLength 54
+
+//time
 #define mainPageBlinkCycle 1.8
 #define mainPageHiddenTime 1.0
 
 #define loadingFinishedAnimate 0.5
+
+
+//key
+#define user_token @"poseidon_token"
+
+
+//identifier
+#define connection_cell @"connection_cell_id"
 
 
 extern NSString *const SERVER_URL;

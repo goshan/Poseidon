@@ -37,7 +37,7 @@ BOOL isBlink = YES;
 - (void)makeViewBlink{
     if (isBlink){
         [self starBlink];
-        _blinkTimer = [NSTimer scheduledTimerWithTimeInterval:mainPageBlinkCycle target:self selector:@selector(starBlink) userInfo:nil repeats:YES];
+        self.blinkTimer = [NSTimer scheduledTimerWithTimeInterval:mainPageBlinkCycle target:self selector:@selector(starBlink) userInfo:nil repeats:YES];
         isBlink = YES;
     }
     else if (isBlink){
@@ -57,13 +57,13 @@ BOOL isBlink = YES;
 }
 
 - (void)loginViewSwitch:(NSString *)user_type{
-    NSString *json = @"[{\"content\":\"软件\",\"similarity\":1.0E9,\"title\":\"软件\",\"titleShow\":\"软件\",\"topic_id\":1430,\"uuid\":\"ffeb8156-e054-4345-bd3f-95eb3f8a290f\"},{\"content\":\" 亲爱的同事们\",\"similarity\":647137,\"title\":\"收集心愿单啦~大家有什么想看的书、期刊杂志？请跟帖~\",\"titleShow\":\"收集心愿单啦~大家有什么想看的书、期刊杂\",\"topic_id\":999,\"uuid\":\"2ba15a95-0fe2-4440-a651-fa9c3b9a58f9\"},{\"content\":\"软件\",\"similarity\":1.0E9,\"title\":\"软件\",\"titleShow\":\"软件\",\"topic_id\":1430,\"uuid\":\"ffeb8156-e054-4345-bd3f-95eb3f8a290f\"},{\"content\":\" 亲爱的同事们\",\"similarity\":647137,\"title\":\"收集心愿单啦~大家有什么想看的书、期刊杂志？请跟帖~\",\"titleShow\":\"收集心愿单啦~大家有什么想看的书、期刊杂\",\"topic_id\":999,\"uuid\":\"2ba15a95-0fe2-4440-a651-fa9c3b9a58f9\"}]";
+    NSString *json = @"[{\"content\":\"软件\",\"similarity\":1.0E9,\"title\":\"软件\",\"titleShow\":\"软件\",\"topic_id\":1430,\"uuid\":\"ffeb8156-e054-4345-bd3f-95eb3f8a290f\"},{\"content\":\" 亲爱的同事们\",\"similarity\":647137,\"title\":\"收集心愿单啦~大家有什么想看的书、期刊杂志？请跟帖~\",\"titleShow\":\"收集心愿单啦~大家有什么想看的书、期刊杂\",\"topic_id\":999,\"uuid\":\"2ba15a95-0fe2-4440-a651-fa9c3b9a58f9\"},{\"content\":\"软件\",\"similarity\":1.0E9,\"title\":\"软件\",\"titleShow\":\"软件\",\"topic_id\":1430,\"uuid\":\"ffeb8156-e054-4345-bd3f-95eb3f8a290f\"},{\"content\":\" 亲爱的同事们：是机房环境卡号福建海事局和放假撒更换即可上飞机尽快放假撒发货就卡死了回复就撒谎发几十块的法律dfkjdskfjkds刷卡就付款了按实际付款了撒房价开始\",\"similarity\":647137,\"title\":\"收集心愿单啦~大家有什么想看的书、期刊杂志？请跟帖~\",\"titleShow\":\"收集心愿单啦~大家有什么想看的书、期刊杂\",\"topic_id\":999,\"uuid\":\"2ba15a95-0fe2-4440-a651-fa9c3b9a58f9\"}]";
     
     NSArray *feedBack = [NSJSONSerialization JSONObjectWithData: [json dataUsingEncoding:NSUTF8StringEncoding] options: NSJSONReadingMutableContainers error: nil];
     
     UIViewController *admin;
     if ([user_type isEqualToString:@"admin"]){
-        admin = [[AdminViewController alloc] initWithData:feedBack];
+        admin = [[AdminViewController alloc] initWithData:feedBack andMainController:self];
     }
     else {
         admin = [[AdminViewController alloc] init];
@@ -80,7 +80,6 @@ BOOL isBlink = YES;
     
     [_login.view removeFromSuperview];
     [self.view addSubview:nav.view];
-    
     [UIView commitAnimations];
 }
 
@@ -150,11 +149,6 @@ BOOL isBlink = YES;
     [_blinkTimer release];
     [_login release];
     [super dealloc];
-}
-
-- (BOOL)prefersStatusBarHidden
-{
-    return NO;
 }
 
 @end

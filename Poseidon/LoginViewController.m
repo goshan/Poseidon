@@ -46,7 +46,7 @@
         _logoSmall = [[UIImageView alloc] initWithFrame:CGRectMake(100, 229, 120, 30)];
         _logoLarge = [[UIImageView alloc] initWithFrame:CGRectMake(72, 323, 176, 30)];
         _productInfo = [[UIImageView alloc] initWithFrame:CGRectMake(72, 445, 176, 15)];
-        _parent = parent;
+        self.parent = parent;
     }
     return self;
 }
@@ -114,7 +114,7 @@
     // Do any additional setup after loading the view from its nib.
     [super viewDidLoad];
     
-    UIFont *font = [UIFont fontWithName:@"goshan" size:50];
+    UIFont *font = [UIFont systemFontOfSize:15];
     
     [_bg setImage:[UIImage imageNamed:@"fullScreenBg"]];
     [self.view addSubview:_bg];

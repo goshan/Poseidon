@@ -23,6 +23,9 @@
 		DE3D54A817D89A8A00DB6731 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54A517D89A8A00DB6731 /* backButton@2x.png */; };
 		DE3D54A917D89A8A00DB6731 /* backButtonClick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54A617D89A8A00DB6731 /* backButtonClick@2x.png */; };
 		DE3D54AA17D89A8A00DB6731 /* connectionNav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54A717D89A8A00DB6731 /* connectionNav@2x.png */; };
+		DE3D54AE17D8A1F400DB6731 /* connectionTable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54AB17D8A1F400DB6731 /* connectionTable@2x.png */; };
+		DE3D54AF17D8A1F400DB6731 /* connectionTableBottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54AC17D8A1F400DB6731 /* connectionTableBottom@2x.png */; };
+		DE3D54B017D8A1F400DB6731 /* connectionTableTop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54AD17D8A1F400DB6731 /* connectionTableTop@2x.png */; };
 		DE85A22217D7FC25002CD308 /* gTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DE85A22117D7FC25002CD308 /* gTextField.m */; };
 		DE85A22517D80553002CD308 /* AdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE85A22417D80553002CD308 /* AdminViewController.m */; };
 		DE85A24A17D80EC7002CD308 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE85A22817D80EC7002CD308 /* AFHTTPClient.m */; };
@@ -90,6 +93,9 @@
 		DE3D54A517D89A8A00DB6731 /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButton@2x.png"; sourceTree = "<group>"; };
 		DE3D54A617D89A8A00DB6731 /* backButtonClick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButtonClick@2x.png"; sourceTree = "<group>"; };
 		DE3D54A717D89A8A00DB6731 /* connectionNav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectionNav@2x.png"; sourceTree = "<group>"; };
+		DE3D54AB17D8A1F400DB6731 /* connectionTable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectionTable@2x.png"; sourceTree = "<group>"; };
+		DE3D54AC17D8A1F400DB6731 /* connectionTableBottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectionTableBottom@2x.png"; sourceTree = "<group>"; };
+		DE3D54AD17D8A1F400DB6731 /* connectionTableTop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectionTableTop@2x.png"; sourceTree = "<group>"; };
 		DE85A22017D7FC25002CD308 /* gTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gTextField.h; sourceTree = "<group>"; };
 		DE85A22117D7FC25002CD308 /* gTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gTextField.m; sourceTree = "<group>"; };
 		DE85A22317D80553002CD308 /* AdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminViewController.h; sourceTree = "<group>"; };
@@ -310,6 +316,9 @@
 		DEEC0BAA17CF64F80096B21F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DE3D54AB17D8A1F400DB6731 /* connectionTable@2x.png */,
+				DE3D54AC17D8A1F400DB6731 /* connectionTableBottom@2x.png */,
+				DE3D54AD17D8A1F400DB6731 /* connectionTableTop@2x.png */,
 				DE3D54A517D89A8A00DB6731 /* backButton@2x.png */,
 				DE3D54A617D89A8A00DB6731 /* backButtonClick@2x.png */,
 				DE3D54A717D89A8A00DB6731 /* connectionNav@2x.png */,
@@ -477,6 +486,9 @@
 				DE3D54A817D89A8A00DB6731 /* backButton@2x.png in Resources */,
 				DE3D54A917D89A8A00DB6731 /* backButtonClick@2x.png in Resources */,
 				DE3D54AA17D89A8A00DB6731 /* connectionNav@2x.png in Resources */,
+				DE3D54AE17D8A1F400DB6731 /* connectionTable@2x.png in Resources */,
+				DE3D54AF17D8A1F400DB6731 /* connectionTableBottom@2x.png in Resources */,
+				DE3D54B017D8A1F400DB6731 /* connectionTableTop@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
