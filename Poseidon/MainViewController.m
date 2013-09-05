@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "Util.h"
 #import "gAnimation.h"
+#import "AdminViewController.h"
 
 
 
@@ -22,6 +23,8 @@ BOOL isBlink = YES;
 @synthesize cover = _cover;
 @synthesize button = _button;
 @synthesize blinkTimer = _blinkTimer;
+@synthesize login = _login;
+
 
 
 
@@ -48,34 +51,82 @@ BOOL isBlink = YES;
 }
 
 - (void)hiddenCover {
-    [gAnimation moveView:self.view toFinalFrame:CGRectMake(0, -500, 320, 460) withDuration:mainPageHiddenTime];
+    [gAnimation moveView:_cover toFinalFrame:CGRectMake(0, -480, 320, 480) withDuration:mainPageHiddenTime];
+    [gAnimation moveView:_button toFinalFrame:CGRectMake(136, -48, 48, 48) withDuration:mainPageHiddenTime];
     [self performSelector:@selector(showStatusBar)withObject:nil afterDelay:mainPageHiddenTime];
-    [self removeFromParentViewController];
+}
+
+- (void)loginViewSwitch:(NSString *)user_type{
+    NSString *json = @"[{\"content\":\"软件\",\"similarity\":1.0E9,\"title\":\"软件\",\"titleShow\":\"软件\",\"topic_id\":1430,\"uuid\":\"ffeb8156-e054-4345-bd3f-95eb3f8a290f\"},{\"content\":\" 亲爱的同事们\",\"similarity\":647137,\"title\":\"收集心愿单啦~大家有什么想看的书、期刊杂志？请跟帖~\",\"titleShow\":\"收集心愿单啦~大家有什么想看的书、期刊杂\",\"topic_id\":999,\"uuid\":\"2ba15a95-0fe2-4440-a651-fa9c3b9a58f9\"},{\"content\":\"软件\",\"similarity\":1.0E9,\"title\":\"软件\",\"titleShow\":\"软件\",\"topic_id\":1430,\"uuid\":\"ffeb8156-e054-4345-bd3f-95eb3f8a290f\"},{\"content\":\" 亲爱的同事们\",\"similarity\":647137,\"title\":\"收集心愿单啦~大家有什么想看的书、期刊杂志？请跟帖~\",\"titleShow\":\"收集心愿单啦~大家有什么想看的书、期刊杂\",\"topic_id\":999,\"uuid\":\"2ba15a95-0fe2-4440-a651-fa9c3b9a58f9\"}]";
+    
+    NSArray *feedBack = [NSJSONSerialization JSONObjectWithData: [json dataUsingEncoding:NSUTF8StringEncoding] options: NSJSONReadingMutableContainers error: nil];
+    
+    UIViewController *admin;
+    if ([user_type isEqualToString:@"admin"]){
+        admin = [[AdminViewController alloc] initWithData:feedBack];
+    }
+    else {
+        admin = [[AdminViewController alloc] init];
+    }
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:admin];
+    [admin release];
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [UIView beginAnimations:nil context:context];
+    [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationDuration:loadingFinishedAnimate];
+    
+    [_login.view removeFromSuperview];
+    [self.view addSubview:nav.view];
+    
+    [UIView commitAnimations];
+}
+
+- (void)logoutViewSwitch:(UINavigationController *)nav{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [UIView beginAnimations:nil context:context];
+    [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationDuration:loadingFinishedAnimate];
+    
+    [nav.view removeFromSuperview];
+    [self.view addSubview:_login.view];
+    [nav release];
+    
+    [UIView commitAnimations];
 }
 
 
 
-
+- (id)init{
+    self = [super init];
+    if (self){
+        _login = [[LoginViewController alloc] initWithParent:self];
+        _cover = [[UIImageView alloc] initWithFrame:allFullScreenRect];
+        _button = [[UIButton alloc] initWithFrame:CGRectMake(136, 480-48, 48, 48)];
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    _cover = [[UIImageView alloc] initWithFrame:allFullScreenRect];
+    [self.view addSubview:_login.view];
+
     [_cover setImage:[UIImage imageNamed:@"banner"]];
     UISwipeGestureRecognizer *gesture = [[[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenCover)] autorelease];
     [gesture setDirection:UISwipeGestureRecognizerDirectionUp];
-    //[_cover addGestureRecognizer:gesture];
     [self.view addSubview:_cover];
     
-    _button = [[UIButton alloc] initWithFrame:CGRectMake(136, 480-48, 48, 48)];
     [_button setImage:[UIImage imageNamed:@"motion"] forState:UIControlStateNormal];
     [_button addTarget:self action:@selector(hiddenCover) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_button];
     
     [self.view addGestureRecognizer:gesture];
     [self makeViewBlink];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,6 +140,7 @@ BOOL isBlink = YES;
     [self setBlinkTimer:nil];
     [self setButton:nil];
     [self setCover:nil];
+    [self setLogin:nil];
     [super viewDidUnload];
 }
 
@@ -96,7 +148,13 @@ BOOL isBlink = YES;
     [_button release];
     [_cover release];
     [_blinkTimer release];
+    [_login release];
     [super dealloc];
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return NO;
 }
 
 @end

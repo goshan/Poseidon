@@ -24,6 +24,8 @@
 #define mainPageBlinkCycle 1.8
 #define mainPageHiddenTime 1.0
 
+#define loadingFinishedAnimate 0.5
+
 
 extern NSString *const SERVER_URL;
 

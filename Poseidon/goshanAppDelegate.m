@@ -11,31 +11,28 @@
 #import "Util.h"
 #import "MainViewController.h"
 #import "LoginViewController.h"
+#import "AdminViewController.h"
 
 @implementation goshanAppDelegate
 
 @synthesize window = _window;
-@synthesize navController = _navController;
+@synthesize main = _main;
 
 - (void)dealloc
 {
     [_window release];
-    [_navController release];
+    [_main release];
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    //[[UIApplication sharedApplication] setStatusBarHidden:YES];
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    MainViewController *main = [[[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil] autorelease];
-    LoginViewController *login = [[LoginViewController alloc] init];
-    //_navController = [[UINavigationController alloc] initWithRootViewController:login];
-    [_navController.view setFrame:statusFullScreenRect];
-    [self.window addSubview:_navController.view];
-    [self.window addSubview:login.view];
-    [self.window addSubview:main.view];
+    _main = [[MainViewController alloc] init];
+
+    [self.window addSubview:_main.view];
     [self.window makeKeyAndVisible];
     
     return YES;

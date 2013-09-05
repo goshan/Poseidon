@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainViewController.h"
+#import "LoginViewController.h"
 
 @interface goshanAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) UINavigationController *navController;
+@property (retain, nonatomic) MainViewController *main;
 
 @end

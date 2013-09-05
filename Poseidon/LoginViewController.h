@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "gTextField.h"
+
+@class MainViewController;
 
 @interface LoginViewController : UIViewController<UITextFieldDelegate>
 
@@ -18,13 +21,9 @@
 
 @property (retain, nonatomic) UIImageView *pwImg;
 
-@property (retain, nonatomic) UIImageView *usernameInputBg;
+@property (retain, nonatomic) gTextField *usernameInput;
 
-@property (retain, nonatomic) UIImageView *pwInputBg;
-
-@property (retain, nonatomic) UITextField *usernameInput;
-
-@property (retain, nonatomic) UITextField *pwInput;
+@property (retain, nonatomic) gTextField *pwInput;
 
 @property (retain, nonatomic) UIButton *loginButton;
 
@@ -34,7 +33,12 @@
 
 @property (retain, nonatomic) UIImageView *productInfo;
 
-@property (retain, nonatomic) UITextField *test;
+@property (retain, nonatomic) MainViewController *parent;
+
+
+
+
+- (id)initWithParent:(MainViewController *)parent;
 
 
 

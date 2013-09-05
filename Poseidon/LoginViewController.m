@@ -8,6 +8,10 @@
 
 #import "LoginViewController.h"
 #import "Util.h"
+#import "AdminViewController.h"
+#import "AFHTTPClient.h"
+#import "AFJSONRequestOperation.h"
+#import "MainViewController.h"
 
 
 @implementation LoginViewController
@@ -18,32 +22,90 @@
 @synthesize loginTitle = _loginTitle;
 @synthesize usernameImg = _usernameImg;
 @synthesize pwImg = _pwImg;
-@synthesize usernameInputBg = _usernameInputBg;
-@synthesize pwInputBg = _pwInputBg;
 @synthesize usernameInput = _usernameInput;
 @synthesize pwInput = _pwInput;
 @synthesize loginButton = _loginButton;
 @synthesize logoSmall = _logoSmall;
 @synthesize logoLarge = _logoLarge;
 @synthesize productInfo = _productInfo;
-@synthesize test = _test;
-
-
-//- (id)init
-//{
-//    self = [super init];
-//    if (self) {
-//        // Custom initialization
-//        //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation_bg2"] forBarMetrics:UIBarMetricsDefault];
-//        //self.title = @"Login";
-//        //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"登陆" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel)];
-//        //[self.navigationItem.leftBarButtonItem setBackgroundImage:[UIImage imageNamed:@"navigation_item_bg"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-//    }
-//    return self;
-//}
+@synthesize parent = _parent;
 
 
 
+- (id)initWithParent:(MainViewController *)parent{
+    self = [super init];
+    if (self) {
+        // Custom initialization
+        _bg = [[UIImageView alloc] initWithFrame:allFullScreenRect];
+        _loginTitle = [[UIImageView alloc] initWithFrame:CGRectMake(115, 38, 90, 40)];
+        _usernameImg = [[UIImageView alloc] initWithFrame:CGRectMake(22, 90, 36, 46)];
+        _pwImg = [[UIImageView alloc] initWithFrame:CGRectMake(22, 90+46, 36, 46)];
+        _usernameInput = [[gTextField alloc] initWithFrame:CGRectMake(22+36, 90, 240, 46) andMarginLeft:10];
+        _pwInput = [[gTextField alloc] initWithFrame:CGRectMake(22+36, 90+46, 240, 46) andMarginLeft:10];
+        _loginButton = [[UIButton alloc] initWithFrame:CGRectMake(22, 90+2*46, 276, 46)];
+        _logoSmall = [[UIImageView alloc] initWithFrame:CGRectMake(100, 229, 120, 30)];
+        _logoLarge = [[UIImageView alloc] initWithFrame:CGRectMake(72, 323, 176, 30)];
+        _productInfo = [[UIImageView alloc] initWithFrame:CGRectMake(72, 445, 176, 15)];
+        _parent = parent;
+    }
+    return self;
+}
+
+
+
+
+- (void)login{
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    
+//    //push user regist data to server
+//    //make url request
+//    NSURL *url = [NSURL URLWithString:SERVER_URL];
+//    AFHTTPClient *httpClient = [[[AFHTTPClient alloc] initWithBaseURL:url]autorelease];
+//    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+//    
+//    NSString *request_type = @"mobile";
+//    NSString *username = [_usernameInput gettextContent];
+//    NSString *password = [_pwInput gettextContent];
+//    
+//    [params setObject:request_type forKey:@"request_type"];
+//    [params setObject:username forKey:@"user.username"];
+//    [params setObject:password forKey:@"user.password"];
+//    
+//    NSString *path = @"/EBP1/userAction_login.action";
+//    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:path parameters:params];
+//    
+//    //put request
+//    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+//        //get respond json from server
+//        NSDictionary *feedback = [[NSDictionary alloc] initWithDictionary:JSON];
+//        NSString *result = [feedback objectForKey:@"flag"];
+//        
+//        if ([result isEqualToString:@"sucess"]){
+//            NSArray *list = [feedback objectForKey:@"list"];
+//            [_tips showRegistFinishedWith:self.view andList:list];
+//        }
+//        else {
+//            NSLog(@"user error!!");
+//        }
+//        [defaults setObject:[feedback objectForKey:@"user_id"] forKey:USERID_KEY];
+//        [defaults setObject:[feedback objectForKey:@"token"] forKey:TOKEN_KEY];
+//        
+//        //dismiss regist view
+//        [self performSelector:@selector(hiddenRegistView) withObject:nil afterDelay:3.0];
+//        [_tips hiddenRegistLoading];
+//        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+//        
+//    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+//        [_tips hiddenRegistLoading];
+//        [_tips netErrorAlert];
+//        
+//        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+//        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+//    }];
+    NSString *user_type = @"admin";
+    [_parent loginViewSwitch:user_type];
+    
+}
 
 
 
@@ -54,69 +116,46 @@
     
     UIFont *font = [UIFont fontWithName:@"goshan" size:50];
     
-    _bg = [[UIImageView alloc] initWithFrame:allFullScreenRect];
     [_bg setImage:[UIImage imageNamed:@"fullScreenBg"]];
     [self.view addSubview:_bg];
     
-    _loginTitle = [[UIImageView alloc] initWithFrame:CGRectMake(115, 38, 90, 40)];
     [_loginTitle setImage:[UIImage imageNamed:@"loginText"]];
     [self.view addSubview:_loginTitle];
     
-    _usernameImg = [[UIImageView alloc] initWithFrame:CGRectMake(22, 90, 36, 46)];
     [_usernameImg setImage:[UIImage imageNamed:@"loginUsername"]];
     [self.view addSubview:_usernameImg];
     
-    _pwImg = [[UIImageView alloc] initWithFrame:CGRectMake(22, 90+46, 36, 46)];
     [_pwImg setImage:[UIImage imageNamed:@"loginPW"]];
     [self.view addSubview:_pwImg];
     
-    _usernameInputBg = [[UIImageView alloc] initWithFrame:CGRectMake(22+36, 90, 240, 46)];
-    [_usernameInputBg setImage:[UIImage imageNamed:@"loginInput"]];
-    [self.view addSubview:_usernameInputBg];
-    
-    _usernameInput = [[UITextField alloc] initWithFrame:CGRectMake(22+36+10, 90, 240-10, 46)];
-    [_usernameInput setBorderStyle:UITextBorderStyleNone];
-    [_usernameInput setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
-    [_usernameInput setBackgroundColor:[UIColor clearColor]];
     [_usernameInput setPlaceholder:@"Username"];
     [_usernameInput setFont:font];
     [_usernameInput setAlpha:0.5];
     [_usernameInput setTextColor:[UIColor whiteColor]];
-    _usernameInput.delegate = self;
+    [_usernameInput setDelegate:self];
     [self.view addSubview:_usernameInput];
     
-    _pwInputBg = [[UIImageView alloc] initWithFrame:CGRectMake(22+36, 90+46, 240, 46)];
-    [_pwInputBg setImage:[UIImage imageNamed:@"loginInput"]];
-    [self.view addSubview:_pwInputBg];
-    
-    _pwInput = [[UITextField alloc] initWithFrame:CGRectMake(22+36+10, 90+46, 240-10, 46)];
-    [_pwInput setBorderStyle:UITextBorderStyleNone];
-    [_pwInput setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
-    [_pwInput setBackgroundColor:[UIColor clearColor]];
     [_pwInput setPlaceholder:@"Password"];
     [_pwInput setFont:font];
     [_pwInput setAlpha:0.5];
     [_pwInput setTextColor:[UIColor whiteColor]];
-    _pwInput.delegate = self;
+    [_pwInput setDelegate:self];
     [self.view addSubview:_pwInput];
     
-    _loginButton = [[UIButton alloc] initWithFrame:CGRectMake(22, 90+2*46, 276, 46)];
     [_loginButton setTitle:@"" forState:UIControlStateNormal];
     [_loginButton setTitle:@"" forState:UIControlStateHighlighted];
     [_loginButton setBackgroundImage:[UIImage imageNamed:@"loginButton"] forState:UIControlStateNormal];
     [_loginButton setBackgroundImage:[UIImage imageNamed:@"loginButtonClick"] forState:UIControlStateHighlighted];
+    [_loginButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_loginButton];
     
-    _logoSmall = [[UIImageView alloc] initWithFrame:CGRectMake(100, 229, 120, 30)];
     [_logoSmall setAlpha:0];
     [_logoSmall setImage:[UIImage imageNamed:@"loginLogoSmall"]];
     [self.view addSubview:_logoSmall];
     
-    _logoLarge = [[UIImageView alloc] initWithFrame:CGRectMake(72, 323, 176, 30)];
     [_logoLarge setImage:[UIImage imageNamed:@"loginLogoLarge"]];
     [self.view addSubview:_logoLarge];
     
-    _productInfo = [[UIImageView alloc] initWithFrame:CGRectMake(72, 445, 176, 15)];
     [_productInfo setImage:[UIImage imageNamed:@"loginEBText"]];
     [self.view addSubview:_productInfo];
 
@@ -134,14 +173,13 @@
     [self setLoginTitle:nil];
     [self setUsernameImg:nil];
     [self setPwImg:nil];
-    [self setUsernameInputBg:nil];
     [self setUsernameInput:nil];
-    [self setPwInputBg:nil];
     [self setPwInput:nil];
     [self setLoginButton:nil];
     [self setLogoSmall:nil];
     [self setLogoLarge:nil];
     [self setProductInfo:nil];
+    [self setParent:nil];
     [super viewDidUnload];
 }
 
@@ -151,13 +189,12 @@
     [_usernameImg release];
     [_pwImg release];
     [_usernameInput release];
-    [_usernameInputBg release];
-    [_pwInputBg release];
     [_pwInput release];
     [_loginButton release];
     [_logoLarge release];
     [_productInfo release];
     [_logoSmall release];
+    [_parent release];
     [super dealloc];
 }
 
