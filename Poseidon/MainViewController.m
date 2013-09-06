@@ -10,6 +10,7 @@
 #import "Util.h"
 #import "gAnimation.h"
 #import "AdminViewController.h"
+#import "UserViewController.h"
 
 
 
@@ -57,20 +58,22 @@ BOOL isBlink = YES;
 }
 
 - (void)loginViewSwitch:(NSString *)user_type{
-    NSString *json = @"[{\"content\":\"软件氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可飞机上看了几个快乐撒谎的感觉卡数据库连接可拉伸感觉sjfkjaskljfklasjgkjsdklgjkl啊数据库附近阿卡丽结果看了就欧佩克感觉撒开了的更好看喇叭\",\"similarity\":1.0E9,\"title\":\"软件\",\"titleShow\":\"软件\",\"topic_id\":1430,\"uuid\":\"ffeb8156-e054-4345-bd3f-95eb3f8a290f\"},{\"content\":\" 亲爱的同事们\",\"similarity\":647137,\"title\":\"收集心愿单啦~大家有什么想看的书、期刊杂志？请跟帖~\",\"titleShow\":\"收集心愿单啦~大家有什么想看的书、期刊杂\",\"topic_id\":999,\"uuid\":\"2ba15a95-0fe2-4440-a651-fa9c3b9a58f9\"},{\"content\":\"软件\",\"similarity\":1.0E9,\"title\":\"软件\",\"titleShow\":\"软件\",\"topic_id\":1430,\"uuid\":\"ffeb8156-e054-4345-bd3f-95eb3f8a290f\"},{\"content\":\" 亲爱的同事们：是机房环境卡号福建海事局和放假撒更换即可上飞机尽快放假撒发货就卡死了回复就撒谎发几十块的法律dfkjdskfjkds刷卡就付款了按实际付款了撒房价开始\",\"similarity\":647137,\"title\":\"收集心愿单啦~大家有什么想看的书、期刊杂志？请跟帖~\",\"titleShow\":\"收集心愿单啦~大家有什么想看的书、期刊杂\",\"topic_id\":999,\"uuid\":\"2ba15a95-0fe2-4440-a651-fa9c3b9a58f9\"}]";
+    //NSString *json = @"[{\"content\":\"软件氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可飞机上看了几个快乐撒谎的感觉卡数据库连接可拉伸感觉sjfkjaskljfklasjgkjsdklgjkl啊数据库附近阿卡丽结果看了就欧佩克感觉撒开了的更好看喇叭\",\"similarity\":1.0E9,\"title\":\"软件\",\"titleShow\":\"软件\",\"topic_id\":1430,\"uuid\":\"ffeb8156-e054-4345-bd3f-95eb3f8a290f\"},{\"content\":\" 亲爱的同事们\",\"similarity\":647137,\"title\":\"收集心愿单啦~大家有什么想看的书、期刊杂志？请跟帖~\",\"titleShow\":\"收集心愿单啦~大家有什么想看的书、期刊杂\",\"topic_id\":999,\"uuid\":\"2ba15a95-0fe2-4440-a651-fa9c3b9a58f9\"},{\"content\":\"软件\",\"similarity\":1.0E9,\"title\":\"软件\",\"titleShow\":\"软件\",\"topic_id\":1430,\"uuid\":\"ffeb8156-e054-4345-bd3f-95eb3f8a290f\"},{\"content\":\" 亲爱的同事们：是机房环境卡号福建海事局和放假撒更换即可上飞机尽快放假撒发货就卡死了回复就撒谎发几十块的法律dfkjdskfjkds刷卡就付款了按实际付款了撒房价开始\",\"similarity\":647137,\"title\":\"收集心愿单啦~大家有什么想看的书、期刊杂志？请跟帖~\",\"titleShow\":\"收集心愿单啦~大家有什么想看的书、期刊杂\",\"topic_id\":999,\"uuid\":\"2ba15a95-0fe2-4440-a651-fa9c3b9a58f9\"}]";
+    
+    NSString *json = @"[{\"content\":\"【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？\",\"created_at\":{\"date\":3,\"day\":2,\"hours\":11,\"minutes\":45,\"month\":8,\"nanos\":0,\"seconds\":9,\"time\":1378179909000,\"timezoneOffset\":-480,\"year\":113},\"source_id\":23},{\"content\":\"推荐几个免费好用的软件\",\"created_at\":{\"date\":3,\"day\":2,\"hours\":1,\"minutes\":12,\"month\":8,\"nanos\":0,\"seconds\":16,\"time\":1378141936000,\"timezoneOffset\":-480,\"year\":113},\"source_id\":24},[{\"access_token\":\"\",\"certCode\":\"\",\"email\":\"\",\"password\":\"\",\"realname\":\"\",\"type\":\"\",\"user_id\":1,\"user_info\":\"\",\"username\":\"刘紫薇\"},{\"access_token\":\"\",\"certCode\":\"\",\"email\":\"\",\"password\":\"\",\"realname\":\"\",\"type\":\"\",\"user_id\":1,\"user_info\":\"\",\"username\":\"刘的减肥垃圾是否是科技紫薇\"}]]";
     
     NSArray *feedBack = [NSJSONSerialization JSONObjectWithData: [json dataUsingEncoding:NSUTF8StringEncoding] options: NSJSONReadingMutableContainers error: nil];
     
-    UIViewController *admin;
+    UIViewController *info;
     if ([user_type isEqualToString:@"admin"]){
-        admin = [[AdminViewController alloc] initWithData:feedBack andMainController:self];
+        info = [[AdminViewController alloc] initWithData:feedBack andMainController:self];
     }
     else {
-        admin = [[AdminViewController alloc] init];
+        info = [[UserViewController alloc] initWithData:feedBack andMainController:self];
     }
     
-    _nav = [[UINavigationController alloc] initWithRootViewController:admin];
-    [admin release];
+    _nav = [[UINavigationController alloc] initWithRootViewController:info];
+    [info release];
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     [UIView beginAnimations:nil context:context];
@@ -83,7 +86,7 @@ BOOL isBlink = YES;
     [UIView commitAnimations];
 }
 
-- (void)logoutViewSwitch:(UINavigationController *)nav{
+- (void)logoutViewSwitch{
     CGContextRef context = UIGraphicsGetCurrentContext();
     [UIView beginAnimations:nil context:context];
     [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES];

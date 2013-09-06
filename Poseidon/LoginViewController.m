@@ -64,8 +64,8 @@
 //    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
 //    
 //    NSString *request_type = @"mobile";
-//    NSString *username = [_usernameInput gettextContent];
-//    NSString *password = [_pwInput gettextContent];
+//    NSString *username = [_usernameInput getTextContent];
+//    NSString *password = [_pwInput getTextContent];
 //    
 //    [params setObject:request_type forKey:@"request_type"];
 //    [params setObject:username forKey:@"user.username"];
@@ -102,7 +102,7 @@
 //        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 //        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 //    }];
-    NSString *user_type = @"admin";
+    NSString *user_type = @"user";
     [_parent loginViewSwitch:user_type];
     
 }
@@ -132,6 +132,7 @@
     [_usernameInput setFont:font];
     [_usernameInput setAlpha:0.5];
     [_usernameInput setTextColor:[UIColor whiteColor]];
+    [_usernameInput setbackgroundImage:[UIImage imageNamed:@"loginInput"]];
     [_usernameInput setDelegate:self];
     [self.view addSubview:_usernameInput];
     
@@ -139,6 +140,7 @@
     [_pwInput setFont:font];
     [_pwInput setAlpha:0.5];
     [_pwInput setTextColor:[UIColor whiteColor]];
+    [_pwInput setbackgroundImage:[UIImage imageNamed:@"loginInput"]];
     [_pwInput setDelegate:self];
     [self.view addSubview:_pwInput];
     

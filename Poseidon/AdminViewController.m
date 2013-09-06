@@ -33,7 +33,7 @@ BOOL isConnection = YES;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:userToken];
     
-    [_main logoutViewSwitch:self.navigationController];
+    [_main logoutViewSwitch];
 }
 
 - (void)loadConnection{

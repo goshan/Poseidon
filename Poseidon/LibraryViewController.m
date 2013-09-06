@@ -8,6 +8,7 @@
 
 #import "LibraryViewController.h"
 #import "Util.h"
+#import "EditViewController.h"
 
 
 
@@ -31,12 +32,10 @@
 
 
 
-
-
-
-
 - (void) edit{
-    
+    EditViewController *edit = [[EditViewController alloc] initWithTtitle:@"" andContent:[_source objectForKey:libContentKey]];
+    [self.navigationController presentViewController:edit animated:YES completion:nil];
+    [edit release];
 }
 
 - (void) back{

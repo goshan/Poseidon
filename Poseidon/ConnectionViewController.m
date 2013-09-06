@@ -8,6 +8,7 @@
 
 #import "ConnectionViewController.h"
 #import "Util.h"
+#import "EditViewController.h"
 
 
 
@@ -34,7 +35,9 @@
 
 
 - (void) edit{
-    
+    EditViewController *edit = [[EditViewController alloc] initWithTtitle:[_topic objectForKey:connectionTitleKey] andContent:[_topic objectForKey:connectionContentKey]];
+    [self.navigationController presentViewController:edit animated:YES completion:nil];
+    [edit release];
 }
 
 - (void) back{

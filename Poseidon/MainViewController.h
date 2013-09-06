@@ -26,6 +26,6 @@
 
 - (void)loginViewSwitch:(NSString *)user_type;
 
-- (void)logoutViewSwitch:(UINavigationController *)nav;
+- (void)logoutViewSwitch;
 
 @end

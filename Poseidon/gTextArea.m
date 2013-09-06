@@ -1,16 +1,14 @@
 //
-//  gTextField.m
+//  gTextArea.m
 //  Poseidon
 //
-//  Created by goshan on 13-9-4.
+//  Created by goshan on 13-9-6.
 //  Copyright (c) 2013年 goshan. All rights reserved.
 //
 
-#import "gTextField.h"
+#import "gTextArea.h"
 
-@implementation gTextField
-
-
+@implementation gTextArea
 
 @synthesize bg = _bg;
 @synthesize text = _text;
@@ -28,13 +26,11 @@
         
         frame.origin.x += margin;
         frame.size.width -= 2*margin;
-        _text = [[UITextField alloc] initWithFrame:frame];
+        frame.origin.y += margin;
+        frame.size.height -= 2*margin;
+        _text = [[UITextView alloc] initWithFrame:frame];
     }
     return self;
-}
-
-- (void) setPlaceholder:(NSString *)content{
-    [_text setPlaceholder:content];
 }
 
 - (void) setFont:(UIFont *)font{
@@ -61,7 +57,7 @@
     return _text.text;
 }
 
-- (void)setDelegate:(id<UITextFieldDelegate>) delegate{
+- (void)setDelegate:(id<UITextViewDelegate>) delegate{
     _text.delegate = delegate;
 }
 
@@ -72,8 +68,6 @@
     // Drawing code
     [self addSubview:_bg];
     
-    [_text setBorderStyle:UITextBorderStyleNone];
-    [_text setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
     [_text setBackgroundColor:[UIColor clearColor]];
     [self addSubview:_text];
 }
@@ -84,6 +78,5 @@
     [_text release];
     [super dealloc];
 }
-
 
 @end
