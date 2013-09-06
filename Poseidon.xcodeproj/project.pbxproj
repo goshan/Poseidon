@@ -365,7 +365,7 @@
 			children = (
 				DEEC0B6D17CF5D350096B21F /* goshanAppDelegate.h */,
 				DEEC0B6E17CF5D350096B21F /* goshanAppDelegate.m */,
-				DEEC0BAF17CF6B990096B21F /* Utils */,
+				DEEC0BAF17CF6B990096B21F /* Models */,
 				DEEC0BD017CFA4AF0096B21F /* Controllers */,
 				DEEC0BCF17CFA4A80096B21F /* Views */,
 				DEEC0BD617CFA88C0096B21F /* Plugins */,
@@ -461,13 +461,13 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		DEEC0BAF17CF6B990096B21F /* Utils */ = {
+		DEEC0BAF17CF6B990096B21F /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				DEEC0BB317CF6DF90096B21F /* Util.h */,
 				DEEC0BB417CF6DF90096B21F /* Util.m */,
 			);
-			name = Utils;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		DEEC0BCE17CFA49C0096B21F /* Models */ = {

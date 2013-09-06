@@ -22,7 +22,7 @@
 - (void)showErrorAlertWithTitle:(NSString *)title andMessage:(NSString *)msg andButtonTitle:(NSString *)button;
 - (void)showLoadingWithContent:(NSString *)msg;
 - (void)hiddenLoading;
-- (void)showTipsWithTitle:(NSString *)title andMessage:(NSString *)msg;
+- (void)showTipsWithTitle:(NSString *)title andMessage:(NSString *)msg andDuration:(CGFloat)dur;
 
 
 

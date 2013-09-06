@@ -32,8 +32,8 @@
     [_loadingSpinner removeFromSuperview];
 }
 
-- (void)showTipsWithTitle:(NSString *)title andMessage:(NSString *)msg{
-    [_view makeToast:msg duration:3.0 position:@"center" title:title];
+- (void)showTipsWithTitle:(NSString *)title andMessage:(NSString *)msg andDuration:(CGFloat)dur{
+    [_view makeToast:msg duration:dur position:@"center" title:title];
 }
 
 - (tipsAlert *)initWith:(UIView *)view{
