@@ -102,7 +102,7 @@
 //        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 //        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 //    }];
-    NSString *user_type = @"user";
+    NSString *user_type = @"admin";
     [_parent loginViewSwitch:user_type];
     
 }
