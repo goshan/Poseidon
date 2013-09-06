@@ -9,6 +9,7 @@
 #import "AdminViewController.h"
 #import "Util.h"
 #import "ConnectionViewController.h"
+#import "LibraryViewController.h"
 
 
 
@@ -56,6 +57,8 @@ BOOL isConnection = YES;
         frame.size.height = 39;
         [_library setFrame:frame];
         [_library setBackgroundImage:[UIImage imageNamed:@"libButton"] forState:UIControlStateNormal];
+        
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"connectionNav"] forBarMetrics:UIBarMetricsDefault];
     }
 }
 
@@ -63,7 +66,7 @@ BOOL isConnection = YES;
     if (isConnection){
         isConnection = NO;
         
-        NSString *json = @"[{\"content\":\"【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？\",\"created_at\":{\"date\":3,\"day\":2,\"hours\":11,\"minutes\":45,\"month\":8,\"nanos\":0,\"seconds\":9,\"time\":1378179909000,\"timezoneOffset\":-480,\"year\":113},\"source_id\":23},{\"content\":\"推荐几个免费好用的软件\",\"created_at\":{\"date\":3,\"day\":2,\"hours\":1,\"minutes\":12,\"month\":8,\"nanos\":0,\"seconds\":16,\"time\":1378141936000,\"timezoneOffset\":-480,\"year\":113},\"source_id\":24},[{\"access_token\":\"\",\"certCode\":\"\",\"email\":\"\",\"password\":\"\",\"realname\":\"\",\"type\":\"\",\"user_id\":1,\"user_info\":\"\",\"username\":\"刘紫薇\"},{\"access_token\":\"\",\"certCode\":\"\",\"email\":\"\",\"password\":\"\",\"realname\":\"\",\"type\":\"\",\"user_id\":1,\"user_info\":\"\",\"username\":\"刘的减肥垃圾是否是科技紫薇\"}]]";
+        NSString *json = @"[{\"content\":\"【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？\",\"created_at\":{\"date\":3,\"day\":2,\"hours\":11,\"minutes\":45,\"month\":8,\"nanos\":0,\"seconds\":9,\"time\":1378179909000,\"timezoneOffset\":-480,\"year\":113},\"source_id\":23},{\"content\":\"推荐几个免费好用的软件\",\"created_at\":{\"date\":3,\"day\":2,\"hours\":1,\"minutes\":12,\"month\":8,\"nanos\":0,\"seconds\":16,\"time\":1378141936000,\"timezoneOffset\":-480,\"year\":113},\"source_id\":24},[{\"access_token\":\"\",\"certCode\":\"\",\"email\":\"\",\"password\":\"\",\"realname\":\"\",\"type\":\"\",\"user_id\":1,\"user_info\":\"\",\"username\":\"刘紫薇\"},{\"access_token\":\"\",\"certCode\":\"\",\"email\":\"\",\"password\":\"\",\"realname\":\"\",\"type\":\"\",\"user_id\":1,\"user_info\":\"\",\"username\":\"刘的减肥垃圾是否是科技紫薇\"}]]";
         
         NSArray *feedBack = [NSJSONSerialization JSONObjectWithData: [json dataUsingEncoding:NSUTF8StringEncoding] options: NSJSONReadingMutableContainers error: nil];
         self.content = feedBack;
@@ -80,6 +83,8 @@ BOOL isConnection = YES;
         frame.size.height = 45;
         [_library setFrame:frame];
         [_library setBackgroundImage:[UIImage imageNamed:@"libButtonClick"] forState:UIControlStateNormal];
+        
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"libNav"] forBarMetrics:UIBarMetricsDefault];
     }
 }
 
@@ -94,12 +99,20 @@ BOOL isConnection = YES;
         _library = [[UIButton alloc] initWithFrame:CGRectMake(160, 416-39, 160, 39)];
         self.main = main;
         self.content = data;
+        
+        isConnection = YES;
     }
     return self;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"connectionNav"] forBarMetrics:UIBarMetricsDefault];
+    if (isConnection){
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"connectionNav"] forBarMetrics:UIBarMetricsDefault];
+    }
+    else {
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"libNav"] forBarMetrics:UIBarMetricsDefault];
+    }
+    
     
     UIButton *leftButton = [[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 44)] autorelease];
     [leftButton setBackgroundImage:[UIImage imageNamed:@"backButton"] forState:UIControlStateNormal];
@@ -128,6 +141,8 @@ BOOL isConnection = YES;
     [_library setBackgroundImage:[UIImage imageNamed:@"libButton"] forState:UIControlStateNormal];
     [_library addTarget:self action:@selector(loadLibrary) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_library];
+    
+    isConnection = YES;
     
 }
 
@@ -270,10 +285,20 @@ BOOL isConnection = YES;
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *topic = [_content objectAtIndex:indexPath.row];
-    ConnectionViewController *connectionTopic = [[ConnectionViewController alloc] initWithTopic:topic];
-    [self.navigationController pushViewController:connectionTopic animated:YES];
-    [connectionTopic release];
+    if (isConnection){
+        NSDictionary *topic = [_content objectAtIndex:indexPath.row];
+        ConnectionViewController *connectionTopic = [[ConnectionViewController alloc] initWithTopic:topic];
+        [self.navigationController pushViewController:connectionTopic animated:YES];
+        [connectionTopic release];
+    }
+    else {
+        NSDictionary *topic = [_content objectAtIndex:indexPath.row];
+        NSDictionary *user = [[_content objectAtIndex:_content.count-1] objectAtIndex:indexPath.row];
+        LibraryViewController *lib = [[LibraryViewController alloc] initWithSource:topic andUser:user];
+        [self.navigationController pushViewController:lib animated:YES];
+        [lib release];
+    }
+    
     
 }
 

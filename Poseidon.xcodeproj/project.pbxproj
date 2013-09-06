@@ -41,6 +41,10 @@
 		DE3D54D117D95B1200DB6731 /* libTable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54CE17D95B1200DB6731 /* libTable@2x.png */; };
 		DE3D54D217D95B1200DB6731 /* libTableBottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54CF17D95B1200DB6731 /* libTableBottom@2x.png */; };
 		DE3D54D317D95B1200DB6731 /* libTableTop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54D017D95B1200DB6731 /* libTableTop@2x.png */; };
+		DE3D54D617D9DAAC00DB6731 /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3D54D517D9DAAC00DB6731 /* LibraryViewController.m */; };
+		DE3D54D917D9DD6A00DB6731 /* libDetailBottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54D717D9DD6900DB6731 /* libDetailBottom@2x.png */; };
+		DE3D54DA17D9DD6A00DB6731 /* libDetailTitle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54D817D9DD6900DB6731 /* libDetailTitle@2x.png */; };
+		DE3D54DC17D9DDAA00DB6731 /* libNav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54DB17D9DDA900DB6731 /* libNav@2x.png */; };
 		DE85A22217D7FC25002CD308 /* gTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DE85A22117D7FC25002CD308 /* gTextField.m */; };
 		DE85A22517D80553002CD308 /* AdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE85A22417D80553002CD308 /* AdminViewController.m */; };
 		DE85A24A17D80EC7002CD308 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE85A22817D80EC7002CD308 /* AFHTTPClient.m */; };
@@ -127,6 +131,11 @@
 		DE3D54CE17D95B1200DB6731 /* libTable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "libTable@2x.png"; sourceTree = "<group>"; };
 		DE3D54CF17D95B1200DB6731 /* libTableBottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "libTableBottom@2x.png"; sourceTree = "<group>"; };
 		DE3D54D017D95B1200DB6731 /* libTableTop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "libTableTop@2x.png"; sourceTree = "<group>"; };
+		DE3D54D417D9DAAB00DB6731 /* LibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryViewController.h; sourceTree = "<group>"; };
+		DE3D54D517D9DAAC00DB6731 /* LibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryViewController.m; sourceTree = "<group>"; };
+		DE3D54D717D9DD6900DB6731 /* libDetailBottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "libDetailBottom@2x.png"; sourceTree = "<group>"; };
+		DE3D54D817D9DD6900DB6731 /* libDetailTitle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "libDetailTitle@2x.png"; sourceTree = "<group>"; };
+		DE3D54DB17D9DDA900DB6731 /* libNav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "libNav@2x.png"; sourceTree = "<group>"; };
 		DE85A22017D7FC25002CD308 /* gTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gTextField.h; sourceTree = "<group>"; };
 		DE85A22117D7FC25002CD308 /* gTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gTextField.m; sourceTree = "<group>"; };
 		DE85A22317D80553002CD308 /* AdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminViewController.h; sourceTree = "<group>"; };
@@ -347,6 +356,9 @@
 		DEEC0BAA17CF64F80096B21F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DE3D54DB17D9DDA900DB6731 /* libNav@2x.png */,
+				DE3D54D717D9DD6900DB6731 /* libDetailBottom@2x.png */,
+				DE3D54D817D9DD6900DB6731 /* libDetailTitle@2x.png */,
 				DE3D54CE17D95B1200DB6731 /* libTable@2x.png */,
 				DE3D54CF17D95B1200DB6731 /* libTableBottom@2x.png */,
 				DE3D54D017D95B1200DB6731 /* libTableTop@2x.png */,
@@ -425,6 +437,8 @@
 				DE85A22417D80553002CD308 /* AdminViewController.m */,
 				DE3D54B117D91CEB00DB6731 /* ConnectionViewController.h */,
 				DE3D54B217D91CEB00DB6731 /* ConnectionViewController.m */,
+				DE3D54D417D9DAAB00DB6731 /* LibraryViewController.h */,
+				DE3D54D517D9DAAC00DB6731 /* LibraryViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -550,6 +564,9 @@
 				DE3D54D117D95B1200DB6731 /* libTable@2x.png in Resources */,
 				DE3D54D217D95B1200DB6731 /* libTableBottom@2x.png in Resources */,
 				DE3D54D317D95B1200DB6731 /* libTableTop@2x.png in Resources */,
+				DE3D54D917D9DD6A00DB6731 /* libDetailBottom@2x.png in Resources */,
+				DE3D54DA17D9DD6A00DB6731 /* libDetailTitle@2x.png in Resources */,
+				DE3D54DC17D9DDAA00DB6731 /* libNav@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +626,7 @@
 				DE85A25817D80EC7002CD308 /* SBJsonParser.m in Sources */,
 				DE85A25917D80EC7002CD308 /* SBJsonWriter.m in Sources */,
 				DE3D54B317D91CEB00DB6731 /* ConnectionViewController.m in Sources */,
+				DE3D54D617D9DAAC00DB6731 /* LibraryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
