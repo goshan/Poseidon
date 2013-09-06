@@ -58,6 +58,10 @@
 		DE3D54F517DA09CB00DB6731 /* createButtonClick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54F417DA09CA00DB6731 /* createButtonClick@2x.png */; };
 		DE3D54F817DA0CD700DB6731 /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3D54F717DA0CD600DB6731 /* UserDetailViewController.m */; };
 		DE3D54FB17DA0ECA00DB6731 /* UserCreateSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3D54FA17DA0EC900DB6731 /* UserCreateSourceViewController.m */; };
+		DE3D54FD17DA18C500DB6731 /* createNavi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54FC17DA18C400DB6731 /* createNavi@2x.png */; };
+		DE3D551617DA1A4B00DB6731 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3D550017DA1A4A00DB6731 /* MBProgressHUD.m */; };
+		DE3D551717DA1A4B00DB6731 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3D550217DA1A4A00DB6731 /* Toast+UIView.m */; };
+		DE3D551F17DA1A4B00DB6731 /* tipsAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3D551517DA1A4A00DB6731 /* tipsAlert.m */; };
 		DE85A22217D7FC25002CD308 /* gTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DE85A22117D7FC25002CD308 /* gTextField.m */; };
 		DE85A22517D80553002CD308 /* AdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE85A22417D80553002CD308 /* AdminViewController.m */; };
 		DE85A24A17D80EC7002CD308 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE85A22817D80EC7002CD308 /* AFHTTPClient.m */; };
@@ -167,6 +171,13 @@
 		DE3D54F717DA0CD600DB6731 /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailViewController.m; sourceTree = "<group>"; };
 		DE3D54F917DA0EC800DB6731 /* UserCreateSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCreateSourceViewController.h; sourceTree = "<group>"; };
 		DE3D54FA17DA0EC900DB6731 /* UserCreateSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCreateSourceViewController.m; sourceTree = "<group>"; };
+		DE3D54FC17DA18C400DB6731 /* createNavi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "createNavi@2x.png"; sourceTree = "<group>"; };
+		DE3D54FF17DA1A4A00DB6731 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		DE3D550017DA1A4A00DB6731 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		DE3D550117DA1A4A00DB6731 /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
+		DE3D550217DA1A4A00DB6731 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
+		DE3D551417DA1A4A00DB6731 /* tipsAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tipsAlert.h; sourceTree = "<group>"; };
+		DE3D551517DA1A4A00DB6731 /* tipsAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tipsAlert.m; sourceTree = "<group>"; };
 		DE85A22017D7FC25002CD308 /* gTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gTextField.h; sourceTree = "<group>"; };
 		DE85A22117D7FC25002CD308 /* gTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gTextField.m; sourceTree = "<group>"; };
 		DE85A22317D80553002CD308 /* AdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminViewController.h; sourceTree = "<group>"; };
@@ -260,6 +271,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE3D54FE17DA1A4A00DB6731 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				DE3D54FF17DA1A4A00DB6731 /* MBProgressHUD.h */,
+				DE3D550017DA1A4A00DB6731 /* MBProgressHUD.m */,
+				DE3D550117DA1A4A00DB6731 /* Toast+UIView.h */,
+				DE3D550217DA1A4A00DB6731 /* Toast+UIView.m */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		DE85A22617D80EC7002CD308 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +409,7 @@
 		DEEC0BAA17CF64F80096B21F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DE3D54FC17DA18C400DB6731 /* createNavi@2x.png */,
 				DE3D54BA17D939E500DB6731 /* createButton@2x.png */,
 				DE3D54F417DA09CA00DB6731 /* createButtonClick@2x.png */,
 				DE3D54ED17DA018700DB6731 /* editContent@2x.png */,
@@ -495,8 +518,11 @@
 		DEEC0BD617CFA88C0096B21F /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				DE3D54FE17DA1A4A00DB6731 /* Alert */,
 				DE85A22617D80EC7002CD308 /* AFNetworking */,
 				DE85A23C17D80EC7002CD308 /* JSON_for_API */,
+				DE3D551417DA1A4A00DB6731 /* tipsAlert.h */,
+				DE3D551517DA1A4A00DB6731 /* tipsAlert.m */,
 				DEEC0BB017CF6BA90096B21F /* gAnimation.h */,
 				DEEC0BB117CF6BA90096B21F /* gAnimation.m */,
 			);
@@ -624,6 +650,7 @@
 				DE3D54EF17DA018900DB6731 /* editContent@2x.png in Resources */,
 				DE3D54F017DA018900DB6731 /* editTitle@2x.png in Resources */,
 				DE3D54F517DA09CB00DB6731 /* createButtonClick@2x.png in Resources */,
+				DE3D54FD17DA18C500DB6731 /* createNavi@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,6 +716,9 @@
 				DE3D54F317DA06EC00DB6731 /* UserViewController.m in Sources */,
 				DE3D54F817DA0CD700DB6731 /* UserDetailViewController.m in Sources */,
 				DE3D54FB17DA0ECA00DB6731 /* UserCreateSourceViewController.m in Sources */,
+				DE3D551617DA1A4B00DB6731 /* MBProgressHUD.m in Sources */,
+				DE3D551717DA1A4B00DB6731 /* Toast+UIView.m in Sources */,
+				DE3D551F17DA1A4B00DB6731 /* tipsAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

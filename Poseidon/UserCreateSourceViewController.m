@@ -70,7 +70,7 @@
     [_navItem setRightBarButtonItem:_send];
     [_navItem setLeftBarButtonItem:_cancel];
     
-    [_navBar setBackgroundImage:[UIImage imageNamed:@"editNavi"] forBarMetrics:UIBarMetricsDefault];
+    [_navBar setBackgroundImage:[UIImage imageNamed:@"createNavi"] forBarMetrics:UIBarMetricsDefault];
     [_navBar setItems:[NSArray arrayWithObject:_navItem]];
     [self.view addSubview:_navBar];
     
@@ -85,22 +85,6 @@
     layer.cornerRadius = 5.0;
     [self.view addSubview:_input];
     
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"editNavi"] forBarMetrics:UIBarMetricsDefault];
-    
-    UIButton *leftButton = [[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 44)] autorelease];
-    [leftButton setBackgroundImage:[UIImage imageNamed:@"cancelButton"] forState:UIControlStateNormal];
-    [leftButton setBackgroundImage:[UIImage imageNamed:@"cancelButtonClick"] forState:UIControlStateHighlighted];
-    [leftButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithCustomView:leftButton] autorelease];
-    
-    UIButton *rightButton = [[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 44)] autorelease];
-    [rightButton setBackgroundImage:[UIImage imageNamed:@"sendButton"] forState:UIControlStateNormal];
-    [rightButton setBackgroundImage:[UIImage imageNamed:@"sendButtonClick"] forState:UIControlStateHighlighted];
-    [rightButton addTarget:self action:@selector(edit) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithCustomView:rightButton] autorelease];
 }
 
 - (void)didReceiveMemoryWarning
