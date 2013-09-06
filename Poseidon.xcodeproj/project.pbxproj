@@ -26,6 +26,21 @@
 		DE3D54AE17D8A1F400DB6731 /* connectionTable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54AB17D8A1F400DB6731 /* connectionTable@2x.png */; };
 		DE3D54AF17D8A1F400DB6731 /* connectionTableBottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54AC17D8A1F400DB6731 /* connectionTableBottom@2x.png */; };
 		DE3D54B017D8A1F400DB6731 /* connectionTableTop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54AD17D8A1F400DB6731 /* connectionTableTop@2x.png */; };
+		DE3D54B317D91CEB00DB6731 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3D54B217D91CEB00DB6731 /* ConnectionViewController.m */; };
+		DE3D54B717D92C8F00DB6731 /* detailNavi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54B417D92C8F00DB6731 /* detailNavi@2x.png */; };
+		DE3D54BB17D939E500DB6731 /* createButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54BA17D939E500DB6731 /* createButton@2x.png */; };
+		DE3D54BE17D93CE700DB6731 /* editButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54BC17D93CE700DB6731 /* editButton@2x.png */; };
+		DE3D54BF17D93CE700DB6731 /* editButtonClick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54BD17D93CE700DB6731 /* editButtonClick@2x.png */; };
+		DE3D54C217D9403D00DB6731 /* connectionDetailBottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54C017D9403D00DB6731 /* connectionDetailBottom@2x.png */; };
+		DE3D54C317D9403D00DB6731 /* connectionDetailTitle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54C117D9403D00DB6731 /* connectionDetailTitle@2x.png */; };
+		DE3D54C817D9557200DB6731 /* connectionButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54C417D9557200DB6731 /* connectionButton@2x.png */; };
+		DE3D54C917D9557200DB6731 /* connectionButtonClick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54C517D9557200DB6731 /* connectionButtonClick@2x.png */; };
+		DE3D54CA17D9557200DB6731 /* libButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54C617D9557200DB6731 /* libButton@2x.png */; };
+		DE3D54CB17D9557200DB6731 /* libButtonClick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54C717D9557200DB6731 /* libButtonClick@2x.png */; };
+		DE3D54CD17D9583500DB6731 /* LibraryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54CC17D9583500DB6731 /* LibraryCell.xib */; };
+		DE3D54D117D95B1200DB6731 /* libTable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54CE17D95B1200DB6731 /* libTable@2x.png */; };
+		DE3D54D217D95B1200DB6731 /* libTableBottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54CF17D95B1200DB6731 /* libTableBottom@2x.png */; };
+		DE3D54D317D95B1200DB6731 /* libTableTop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54D017D95B1200DB6731 /* libTableTop@2x.png */; };
 		DE85A22217D7FC25002CD308 /* gTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DE85A22117D7FC25002CD308 /* gTextField.m */; };
 		DE85A22517D80553002CD308 /* AdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE85A22417D80553002CD308 /* AdminViewController.m */; };
 		DE85A24A17D80EC7002CD308 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE85A22817D80EC7002CD308 /* AFHTTPClient.m */; };
@@ -96,6 +111,22 @@
 		DE3D54AB17D8A1F400DB6731 /* connectionTable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectionTable@2x.png"; sourceTree = "<group>"; };
 		DE3D54AC17D8A1F400DB6731 /* connectionTableBottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectionTableBottom@2x.png"; sourceTree = "<group>"; };
 		DE3D54AD17D8A1F400DB6731 /* connectionTableTop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectionTableTop@2x.png"; sourceTree = "<group>"; };
+		DE3D54B117D91CEB00DB6731 /* ConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionViewController.h; sourceTree = "<group>"; };
+		DE3D54B217D91CEB00DB6731 /* ConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionViewController.m; sourceTree = "<group>"; };
+		DE3D54B417D92C8F00DB6731 /* detailNavi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detailNavi@2x.png"; sourceTree = "<group>"; };
+		DE3D54BA17D939E500DB6731 /* createButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "createButton@2x.png"; sourceTree = "<group>"; };
+		DE3D54BC17D93CE700DB6731 /* editButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "editButton@2x.png"; sourceTree = "<group>"; };
+		DE3D54BD17D93CE700DB6731 /* editButtonClick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "editButtonClick@2x.png"; sourceTree = "<group>"; };
+		DE3D54C017D9403D00DB6731 /* connectionDetailBottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectionDetailBottom@2x.png"; sourceTree = "<group>"; };
+		DE3D54C117D9403D00DB6731 /* connectionDetailTitle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectionDetailTitle@2x.png"; sourceTree = "<group>"; };
+		DE3D54C417D9557200DB6731 /* connectionButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectionButton@2x.png"; sourceTree = "<group>"; };
+		DE3D54C517D9557200DB6731 /* connectionButtonClick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectionButtonClick@2x.png"; sourceTree = "<group>"; };
+		DE3D54C617D9557200DB6731 /* libButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "libButton@2x.png"; sourceTree = "<group>"; };
+		DE3D54C717D9557200DB6731 /* libButtonClick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "libButtonClick@2x.png"; sourceTree = "<group>"; };
+		DE3D54CC17D9583500DB6731 /* LibraryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LibraryCell.xib; sourceTree = "<group>"; };
+		DE3D54CE17D95B1200DB6731 /* libTable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "libTable@2x.png"; sourceTree = "<group>"; };
+		DE3D54CF17D95B1200DB6731 /* libTableBottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "libTableBottom@2x.png"; sourceTree = "<group>"; };
+		DE3D54D017D95B1200DB6731 /* libTableTop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "libTableTop@2x.png"; sourceTree = "<group>"; };
 		DE85A22017D7FC25002CD308 /* gTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gTextField.h; sourceTree = "<group>"; };
 		DE85A22117D7FC25002CD308 /* gTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gTextField.m; sourceTree = "<group>"; };
 		DE85A22317D80553002CD308 /* AdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminViewController.h; sourceTree = "<group>"; };
@@ -316,6 +347,19 @@
 		DEEC0BAA17CF64F80096B21F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DE3D54CE17D95B1200DB6731 /* libTable@2x.png */,
+				DE3D54CF17D95B1200DB6731 /* libTableBottom@2x.png */,
+				DE3D54D017D95B1200DB6731 /* libTableTop@2x.png */,
+				DE3D54C417D9557200DB6731 /* connectionButton@2x.png */,
+				DE3D54C517D9557200DB6731 /* connectionButtonClick@2x.png */,
+				DE3D54C617D9557200DB6731 /* libButton@2x.png */,
+				DE3D54C717D9557200DB6731 /* libButtonClick@2x.png */,
+				DE3D54C017D9403D00DB6731 /* connectionDetailBottom@2x.png */,
+				DE3D54C117D9403D00DB6731 /* connectionDetailTitle@2x.png */,
+				DE3D54BA17D939E500DB6731 /* createButton@2x.png */,
+				DE3D54BC17D93CE700DB6731 /* editButton@2x.png */,
+				DE3D54BD17D93CE700DB6731 /* editButtonClick@2x.png */,
+				DE3D54B417D92C8F00DB6731 /* detailNavi@2x.png */,
 				DE3D54AB17D8A1F400DB6731 /* connectionTable@2x.png */,
 				DE3D54AC17D8A1F400DB6731 /* connectionTableBottom@2x.png */,
 				DE3D54AD17D8A1F400DB6731 /* connectionTableTop@2x.png */,
@@ -365,6 +409,7 @@
 				DE85A22017D7FC25002CD308 /* gTextField.h */,
 				DE85A22117D7FC25002CD308 /* gTextField.m */,
 				DE3D54A317D8983E00DB6731 /* ConnectionCell.xib */,
+				DE3D54CC17D9583500DB6731 /* LibraryCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -378,6 +423,8 @@
 				DEEC0BD217CFA4E20096B21F /* LoginViewController.m */,
 				DE85A22317D80553002CD308 /* AdminViewController.h */,
 				DE85A22417D80553002CD308 /* AdminViewController.m */,
+				DE3D54B117D91CEB00DB6731 /* ConnectionViewController.h */,
+				DE3D54B217D91CEB00DB6731 /* ConnectionViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -489,6 +536,20 @@
 				DE3D54AE17D8A1F400DB6731 /* connectionTable@2x.png in Resources */,
 				DE3D54AF17D8A1F400DB6731 /* connectionTableBottom@2x.png in Resources */,
 				DE3D54B017D8A1F400DB6731 /* connectionTableTop@2x.png in Resources */,
+				DE3D54B717D92C8F00DB6731 /* detailNavi@2x.png in Resources */,
+				DE3D54BB17D939E500DB6731 /* createButton@2x.png in Resources */,
+				DE3D54BE17D93CE700DB6731 /* editButton@2x.png in Resources */,
+				DE3D54BF17D93CE700DB6731 /* editButtonClick@2x.png in Resources */,
+				DE3D54C217D9403D00DB6731 /* connectionDetailBottom@2x.png in Resources */,
+				DE3D54C317D9403D00DB6731 /* connectionDetailTitle@2x.png in Resources */,
+				DE3D54C817D9557200DB6731 /* connectionButton@2x.png in Resources */,
+				DE3D54C917D9557200DB6731 /* connectionButtonClick@2x.png in Resources */,
+				DE3D54CA17D9557200DB6731 /* libButton@2x.png in Resources */,
+				DE3D54CB17D9557200DB6731 /* libButtonClick@2x.png in Resources */,
+				DE3D54CD17D9583500DB6731 /* LibraryCell.xib in Resources */,
+				DE3D54D117D95B1200DB6731 /* libTable@2x.png in Resources */,
+				DE3D54D217D95B1200DB6731 /* libTableBottom@2x.png in Resources */,
+				DE3D54D317D95B1200DB6731 /* libTableTop@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +608,7 @@
 				DE85A25717D80EC7002CD308 /* SBJsonBase.m in Sources */,
 				DE85A25817D80EC7002CD308 /* SBJsonParser.m in Sources */,
 				DE85A25917D80EC7002CD308 /* SBJsonWriter.m in Sources */,
+				DE3D54B317D91CEB00DB6731 /* ConnectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

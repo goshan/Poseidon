@@ -15,6 +15,16 @@ NSString* const SERVER_URL = @"http://easy-follow.com";
 #endif
 
 
-@implementation Util
+@implementation Utils
+
+
++ (NSString *)genTimeStr:(NSDictionary *)time{
+    NSTimeInterval interval = [[time objectForKey:@"time"] intValue];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:interval];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm yyyy/MM/dd"];
+    NSString *timeStr = [dateFormatter stringFromDate:date];
+    return timeStr;
+}
 
 @end

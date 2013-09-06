@@ -17,6 +17,10 @@
 
 @property (retain, nonatomic) UIImageView *bg;
 
+@property (retain, nonatomic) UIButton *connection;
+
+@property (retain, nonatomic) UIButton *library;
+
 @property (retain, nonatomic) NSArray *content;
 
 @property (retain, nonatomic) MainViewController *main;
