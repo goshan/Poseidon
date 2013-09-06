@@ -56,6 +56,8 @@
 		DE3D54F017DA018900DB6731 /* editTitle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54EE17DA018800DB6731 /* editTitle@2x.png */; };
 		DE3D54F317DA06EC00DB6731 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3D54F217DA06EB00DB6731 /* UserViewController.m */; };
 		DE3D54F517DA09CB00DB6731 /* createButtonClick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3D54F417DA09CA00DB6731 /* createButtonClick@2x.png */; };
+		DE3D54F817DA0CD700DB6731 /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3D54F717DA0CD600DB6731 /* UserDetailViewController.m */; };
+		DE3D54FB17DA0ECA00DB6731 /* UserCreateSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3D54FA17DA0EC900DB6731 /* UserCreateSourceViewController.m */; };
 		DE85A22217D7FC25002CD308 /* gTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DE85A22117D7FC25002CD308 /* gTextField.m */; };
 		DE85A22517D80553002CD308 /* AdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE85A22417D80553002CD308 /* AdminViewController.m */; };
 		DE85A24A17D80EC7002CD308 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE85A22817D80EC7002CD308 /* AFHTTPClient.m */; };
@@ -161,6 +163,10 @@
 		DE3D54F117DA06EA00DB6731 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		DE3D54F217DA06EB00DB6731 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		DE3D54F417DA09CA00DB6731 /* createButtonClick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "createButtonClick@2x.png"; sourceTree = "<group>"; };
+		DE3D54F617DA0CD500DB6731 /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailViewController.h; sourceTree = "<group>"; };
+		DE3D54F717DA0CD600DB6731 /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailViewController.m; sourceTree = "<group>"; };
+		DE3D54F917DA0EC800DB6731 /* UserCreateSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCreateSourceViewController.h; sourceTree = "<group>"; };
+		DE3D54FA17DA0EC900DB6731 /* UserCreateSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCreateSourceViewController.m; sourceTree = "<group>"; };
 		DE85A22017D7FC25002CD308 /* gTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gTextField.h; sourceTree = "<group>"; };
 		DE85A22117D7FC25002CD308 /* gTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gTextField.m; sourceTree = "<group>"; };
 		DE85A22317D80553002CD308 /* AdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminViewController.h; sourceTree = "<group>"; };
@@ -478,6 +484,10 @@
 				DE3D54DE17D9E2A200DB6731 /* EditViewController.m */,
 				DE3D54F117DA06EA00DB6731 /* UserViewController.h */,
 				DE3D54F217DA06EB00DB6731 /* UserViewController.m */,
+				DE3D54F617DA0CD500DB6731 /* UserDetailViewController.h */,
+				DE3D54F717DA0CD600DB6731 /* UserDetailViewController.m */,
+				DE3D54F917DA0EC800DB6731 /* UserCreateSourceViewController.h */,
+				DE3D54FA17DA0EC900DB6731 /* UserCreateSourceViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -677,6 +687,8 @@
 				DE3D54DF17D9E2A200DB6731 /* EditViewController.m in Sources */,
 				DE3D54E217D9E72500DB6731 /* gTextArea.m in Sources */,
 				DE3D54F317DA06EC00DB6731 /* UserViewController.m in Sources */,
+				DE3D54F817DA0CD700DB6731 /* UserDetailViewController.m in Sources */,
+				DE3D54FB17DA0ECA00DB6731 /* UserCreateSourceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

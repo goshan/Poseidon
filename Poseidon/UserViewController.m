@@ -8,7 +8,8 @@
 
 #import "UserViewController.h"
 #import "Util.h"
-#import "LibraryViewController.h"
+#import "UserDetailViewController.h"
+#import "UserCreateSourceViewController.h"
 
 
 @implementation UserViewController
@@ -24,7 +25,9 @@
 
 
 - (void)createSource{
-    
+    UserCreateSourceViewController *create = [[UserCreateSourceViewController alloc] init];
+    [self presentViewController:create animated:YES completion:nil];
+    [create release];
 }
 
 - (void)logout{
@@ -167,9 +170,9 @@
 {
     NSDictionary *topic = [_content objectAtIndex:indexPath.row];
     NSDictionary *user = [[_content objectAtIndex:_content.count-1] objectAtIndex:indexPath.row];
-    LibraryViewController *lib = [[LibraryViewController alloc] initWithSource:topic andUser:user];
-    [self.navigationController pushViewController:lib animated:YES];
-    [lib release];
+    UserDetailViewController *detail = [[UserDetailViewController alloc] initWithSource:topic andUser:user];
+    [self.navigationController pushViewController:detail animated:YES];
+    [detail release];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
