@@ -159,7 +159,6 @@
     cellContent.alpha = 0.7;
     cellContent.lineBreakMode = NSLineBreakByWordWrapping;
     cellContent.numberOfLines = 0;
-    [cellContent sizeToFit];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     

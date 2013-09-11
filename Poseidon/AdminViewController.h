@@ -25,6 +25,8 @@
 
 @property (retain, nonatomic) MainViewController *main;
 
+@property (retain, nonatomic) tipsAlert *tips;
+
 
 
 

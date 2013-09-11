@@ -29,6 +29,8 @@
 @synthesize logoLarge = _logoLarge;
 @synthesize productInfo = _productInfo;
 @synthesize parent = _parent;
+@synthesize tips = _tips;
+@synthesize url = _url;
 
 
 
@@ -36,6 +38,8 @@
     self = [super init];
     if (self) {
         // Custom initialization
+        _url = [[UITextField alloc] initWithFrame:CGRectMake(0, 20, 320, 48)];
+        
         _bg = [[UIImageView alloc] initWithFrame:allFullScreenRect];
         _loginTitle = [[UIImageView alloc] initWithFrame:CGRectMake(115, 38, 90, 40)];
         _usernameImg = [[UIImageView alloc] initWithFrame:CGRectMake(22, 90, 36, 46)];
@@ -47,6 +51,7 @@
         _logoLarge = [[UIImageView alloc] initWithFrame:CGRectMake(72, 323, 176, 30)];
         _productInfo = [[UIImageView alloc] initWithFrame:CGRectMake(72, 445, 176, 15)];
         self.parent = parent;
+        _tips = [[tipsAlert alloc] initWith:self.view];
     }
     return self;
 }
@@ -55,65 +60,80 @@
 
 
 - (void)login{
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    
-//    //push user regist data to server
-//    //make url request
-//    NSURL *url = [NSURL URLWithString:SERVER_URL];
-//    AFHTTPClient *httpClient = [[[AFHTTPClient alloc] initWithBaseURL:url]autorelease];
-//    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-//    
-//    NSString *request_type = @"mobile";
-//    NSString *username = [_usernameInput getTextContent];
-//    NSString *password = [_pwInput getTextContent];
-//    
-//    [params setObject:request_type forKey:@"request_type"];
-//    [params setObject:username forKey:@"user.username"];
-//    [params setObject:password forKey:@"user.password"];
-//    
-//    NSString *path = @"/EBP1/userAction_login.action";
-//    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:path parameters:params];
-//    
-//    //put request
-//    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-//        //get respond json from server
-//        NSDictionary *feedback = [[NSDictionary alloc] initWithDictionary:JSON];
-//        NSString *result = [feedback objectForKey:@"flag"];
-//        
-//        if ([result isEqualToString:@"sucess"]){
-//            NSArray *list = [feedback objectForKey:@"list"];
-//            [_tips showRegistFinishedWith:self.view andList:list];
-//        }
-//        else {
-//            NSLog(@"user error!!");
-//        }
-//        [defaults setObject:[feedback objectForKey:@"user_id"] forKey:USERID_KEY];
-//        [defaults setObject:[feedback objectForKey:@"token"] forKey:TOKEN_KEY];
-//        
-//        //dismiss regist view
-//        [self performSelector:@selector(hiddenRegistView) withObject:nil afterDelay:3.0];
-//        [_tips hiddenRegistLoading];
-//        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-//        
-//    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-//        [_tips hiddenRegistLoading];
-//        [_tips netErrorAlert];
-//        
-//        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-//        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-//    }];
-    NSString *user_type = @"admin";
-    [_parent loginViewSwitch:user_type];
+    [_usernameInput releaseInput];
+    [_pwInput releaseInput];
+    
+    if (_url.text){
+        [Utils saveServerURL:_url.text];
+    }
+    
+    [_tips showLoadingWithContent:@"登录中..."];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    //make url request
+    NSURL *url = [NSURL URLWithString:[Utils getServerURL]];
+    AFHTTPClient *httpClient = [[[AFHTTPClient alloc] initWithBaseURL:url]autorelease];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    
+    NSString *request_type = @"mobile";
+    NSString *username = [_usernameInput getTextContent];
+    NSString *password = [_pwInput getTextContent];
+    
+    [params setObject:request_type forKey:@"request_type"];
+    [params setObject:(username ? username : @"") forKey:@"user.username"];
+    [params setObject:(password ? password : @"") forKey:@"user.password"];
+    
+    NSString *path = @"EBP1/userAction_login.action";
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:path parameters:params];
+    
+    //put request
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        [_tips hiddenLoading];
+        [_pwInput setTextContent:@""];
+        
+        NSDictionary *feedback = [[NSDictionary alloc] initWithDictionary:JSON];
+        NSString *result = [feedback objectForKey:@"flag"];
+        
+        if ([result isEqualToString:@"login_success"]){
+            [defaults setObject:[feedback objectForKey:@"access_token"] forKey:userToken];
+            NSString *user_type = [feedback objectForKey:@"user_type"];
+            [_parent loginViewSwitch:user_type];
+        }
+        else {
+            NSString *err_msg;
+            if ([result isEqualToString:@"not_exist"]){
+                err_msg = @"用户不存在";
+            }
+            else if ([result isEqualToString:@"password_wrong"]){
+                err_msg = @"密码错误";
+            }
+            else if ([result isEqualToString:@"unknown_request_type"]){
+                err_msg = @"登陆类型错误";
+            }
+            else if ([result isEqualToString:@"false_to_create_access_token"]){
+                err_msg = @"无法创建token";
+            }
+            else {
+                err_msg = result;
+            }
+            [_tips showTipsWithTitle:@"登陆错误" andMessage:err_msg andDuration:TipsShowTime];
+        }
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        [_tips hiddenLoading];
+        [_tips showErrorAlertWithTitle:@"网络错误" andMessage:@"少年乃确定网络连接好了" andButtonTitle:@"囧"];
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    }];
+    [operation start];
     
 }
-
-
 
 - (void)viewDidLoad
 {
     // Do any additional setup after loading the view from its nib.
     [super viewDidLoad];
-    
     UIFont *font = [UIFont systemFontOfSize:15];
     
     [_bg setImage:[UIImage imageNamed:@"fullScreenBg"]];
@@ -133,6 +153,7 @@
     [_usernameInput setAlpha:0.5];
     [_usernameInput setTextColor:[UIColor whiteColor]];
     [_usernameInput setbackgroundImage:[UIImage imageNamed:@"loginInput"]];
+    [_usernameInput setClearButtonShow];
     [_usernameInput setDelegate:self];
     [self.view addSubview:_usernameInput];
     
@@ -141,7 +162,9 @@
     [_pwInput setAlpha:0.5];
     [_pwInput setTextColor:[UIColor whiteColor]];
     [_pwInput setbackgroundImage:[UIImage imageNamed:@"loginInput"]];
+    [_pwInput setClearButtonShow];
     [_pwInput setDelegate:self];
+    [_pwInput setPassword];
     [self.view addSubview:_pwInput];
     
     [_loginButton setTitle:@"" forState:UIControlStateNormal];
@@ -160,7 +183,11 @@
     
     [_productInfo setImage:[UIImage imageNamed:@"loginEBText"]];
     [self.view addSubview:_productInfo];
-
+    
+    [_url setBorderStyle:UITextBorderStyleNone];
+    [_url setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
+    [_url setBackgroundColor:[UIColor clearColor]];
+    [self.view addSubview:_url];
 }
 
 - (void)didReceiveMemoryWarning
@@ -182,6 +209,8 @@
     [self setLogoLarge:nil];
     [self setProductInfo:nil];
     [self setParent:nil];
+    [self setTips:nil];
+    [self setUrl:nil];
     [super viewDidUnload];
 }
 
@@ -197,6 +226,8 @@
     [_productInfo release];
     [_logoSmall release];
     [_parent release];
+    [_tips release];
+    [_url release];
     [super dealloc];
 }
 

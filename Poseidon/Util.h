@@ -32,6 +32,8 @@
 
 #define loadingFinishedAnimate 0.5
 
+#define TipsShowTime 3.0
+
 
 //key
 #define userToken @"poseidon_token"
@@ -40,6 +42,7 @@
 #define libAuthorKey @"username"
 #define libTimeKey @"created_at"
 #define libContentKey @"content"
+
 
 
 //identifier
@@ -57,6 +60,10 @@ extern NSString *const SERVER_URL;
 @interface Utils : NSObject
 
 + (NSString *)genTimeStr:(NSDictionary *)time;
+
++ (NSString *)getServerURL;
+
++ (void) saveServerURL:(NSString *)url;
 
 @end
 

@@ -8,6 +8,8 @@
 
 #import "EditViewController.h"
 #import "Util.h"
+#import "AFJSONRequestOperation.h"
+#import "AFHTTPClient.h"
 
 
 
@@ -22,18 +24,88 @@
 @synthesize bg = _bg;
 @synthesize titleInput = _titleInput;
 @synthesize contentInput = _contentInput;
+@synthesize tips = _tips;
 
 
 
 
 
-
-- (void) sendPublish{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (void) cancelPublish{
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) sendPublish{
+    [_titleInput.text resignFirstResponder];
+    [_contentInput.text resignFirstResponder];
+    
+    [_tips showLoadingWithContent:@"发布中..."];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    //make url request
+    NSURL *url = [NSURL URLWithString:[Utils getServerURL]];
+    AFHTTPClient *httpClient = [[[AFHTTPClient alloc] initWithBaseURL:url]autorelease];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    
+    NSString *request_type = @"mobile";
+    NSString *access_token = [defaults objectForKey:userToken];
+    NSString *title = [_titleInput getTextContent];
+    NSString *content = [_contentInput getTextContent];
+    
+    [params setObject:request_type forKey:@"request_type"];
+    [params setObject:(access_token ? access_token : @"") forKey:@"access_token"];
+    [params setObject:(title ? title : @"") forKey:@"title"];
+    [params setObject:(content ? content : @"") forKey:@"content"];
+    
+    NSString *path = @"EBP1/releaseAjaxAction_releaseSinaWeibo.action";
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:path parameters:params];
+    
+    //put request
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        [_tips hiddenLoading];
+        
+        NSDictionary *feedback = [[NSDictionary alloc] initWithDictionary:JSON];
+        NSString *result = [feedback objectForKey:@"flag"];
+        
+        if ([result isEqualToString:@"release_success"]){
+            [_tips showTipsWithTitle:@"发布成功" andMessage:@"新浪微博" andDuration:TipsShowTime];
+            [self performSelector:@selector(cancelPublish) withObject:nil afterDelay:TipsShowTime];
+        }
+        else {
+            NSString *err_msg;
+            if ([result isEqualToString:@"not_login"]){
+                err_msg = @"用户不存在";
+            }
+            else if ([result isEqualToString:@"not_admin"]){
+                err_msg = @"密码错误";
+            }
+            else if ([result isEqualToString:@"unknown_request_type"]){
+                err_msg = @"请求类型错误";
+            }
+            else if ([result isEqualToString:@"false_to_create_access_token"]){
+                err_msg = @"无法创建token";
+            }
+            else if ([result isEqualToString:@"publish_sina_failed"]){
+                err_msg = @"发布失败";
+            }
+            else if ([result isEqualToString:@"publish_DBSave_failed"]){
+                err_msg = @"数据存储失败";
+            }
+            else {
+                err_msg = result;
+            }
+            [_tips showTipsWithTitle:@"发布错误" andMessage:err_msg andDuration:TipsShowTime];
+        }
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        [_tips hiddenLoading];
+        
+        [_tips showErrorAlertWithTitle:@"网络错误" andMessage:@"少年乃确定网络连接好了" andButtonTitle:@"囧"];
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    }];
+    [operation start];
 }
 
 - (id)initWithTtitle:(NSString *)title andContent:(NSString *)content
@@ -64,6 +136,8 @@
         
         _contentInput = [[gTextArea alloc] initWithFrame:CGRectMake(10, 53+32, 300, 147) andMarginLeft:0];
         [_contentInput setTextContent:content];
+        
+        _tips = [[tipsAlert alloc] initWith:self.view];
     }
     return self;
 }
@@ -125,6 +199,7 @@
     [self setBg:nil];
     [self setTitleInput:nil];
     [self setContentInput:nil];
+    [self setTips:nil];
     [super viewDidUnload];
 }
 
@@ -136,6 +211,7 @@
     [_bg release];
     [_titleInput release];
     [_contentInput release];
+    [_tips release];
     [super dealloc];
 }
 

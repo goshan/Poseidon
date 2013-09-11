@@ -29,10 +29,17 @@
 
 - (void) setbackgroundImage:(UIImage *)backgroundImage;
 
+- (void) setPassword;
+
+- (void) setClearButtonShow;
+
 - (void) setTextContent:(NSString *)content;
+
 - (NSString *) getTextContent;
 
 
 - (void) setDelegate:(id<UITextFieldDelegate>) delegate;
+
+- (void) releaseInput;
 
 @end

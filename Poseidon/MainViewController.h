@@ -21,6 +21,8 @@
 
 @property (retain, nonatomic) UINavigationController *nav;
 
+@property (retain, nonatomic) tipsAlert *tips;
+
 
 
 

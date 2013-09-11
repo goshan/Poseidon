@@ -8,6 +8,8 @@
 
 #import "UserCreateSourceViewController.h"
 #import "Util.h"
+#import "AFHTTPClient.h"
+#import "AFJSONRequestOperation.h"
 #import <QuartzCore/QuartzCore.h>
 
 
@@ -21,6 +23,7 @@
 @synthesize cancel = _cancel;
 @synthesize bg = _bg;
 @synthesize input = _input;
+@synthesize tips = _tips;
 
 
 
@@ -28,7 +31,61 @@
 
 
 - (void) sendSource{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [_input resignFirstResponder];
+    
+    [_tips showLoadingWithContent:@"发布中..."];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    //make url request
+    NSURL *url = [NSURL URLWithString:[Utils getServerURL]];
+    AFHTTPClient *httpClient = [[[AFHTTPClient alloc] initWithBaseURL:url]autorelease];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    
+    NSString *request_type = @"mobile";
+    NSString *access_token = [defaults objectForKey:userToken];
+    NSString *content = _input.text;
+    
+    [params setObject:request_type forKey:@"request_type"];
+    [params setObject:(access_token ? access_token : @"") forKey:@"access_token"];
+    [params setObject:(content ? content : @"") forKey:@"content"];
+    
+    NSString *path = @"EBP1/communicationAjaxAction_addSource.action";
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:path parameters:params];
+    
+    //put request
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        [_tips hiddenLoading];
+        
+        NSDictionary *feedback = [[NSDictionary alloc] initWithDictionary:JSON];
+        NSString *result = [feedback objectForKey:@"flag"];
+        
+        if ([result isEqualToString:@"success_addSourceByMobile"]){
+            [_tips showTipsWithTitle:@"添加成功" andMessage:@"素材池" andDuration:TipsShowTime];
+            [self performSelector:@selector(cancelSource) withObject:nil afterDelay:TipsShowTime];
+        }
+        else {
+            NSString *err_msg;
+            if ([result isEqualToString:@"unknown_request_type"]){
+                err_msg = @"请求类型错误";
+            }
+            else if ([result isEqualToString:@"fail_to_get_user_by_accesstoken"]){
+                err_msg = @"无法创建token";
+            }
+            else {
+                err_msg = result;
+            }
+            [_tips showTipsWithTitle:@"添加错误" andMessage:err_msg andDuration:TipsShowTime];
+        }
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        [_tips hiddenLoading];
+        
+        [_tips showErrorAlertWithTitle:@"网络错误" andMessage:@"少年乃确定网络连接好了" andButtonTitle:@"囧"];
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    }];
+    [operation start];
 }
 
 - (void) cancelSource{
@@ -59,6 +116,8 @@
         _bg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 44, 320, 614)];
                 
         _input = [[UITextView alloc] initWithFrame:CGRectMake(10, 53, 300, 180)];
+        
+        _tips = [[tipsAlert alloc] initWith:self.view];
     }
     return self;
 }
@@ -100,6 +159,7 @@
     [self setSend:nil];
     [self setCancel:nil];
     [self setBg:nil];
+    [self setTips:nil];
     [super viewDidUnload];
 }
 
@@ -109,6 +169,7 @@
     [_send release];
     [_cancel release];
     [_bg release];
+    [_tips release];
     [super dealloc];
 }
 

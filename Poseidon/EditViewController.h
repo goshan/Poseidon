@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "gTextField.h"
 #import "gTextArea.h"
+#import "tipsAlert.h"
 
 @interface EditViewController : UIViewController
 
@@ -19,6 +20,7 @@
 @property (retain, nonatomic) UIImageView *bg;
 @property (retain, nonatomic) gTextField *titleInput;
 @property (retain, nonatomic) gTextArea *contentInput;
+@property (retain, nonatomic) tipsAlert *tips;
 
 
 

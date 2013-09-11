@@ -11,6 +11,8 @@
 #import "gAnimation.h"
 #import "AdminViewController.h"
 #import "UserViewController.h"
+#import "AFHTTPClient.h"
+#import "AFJSONRequestOperation.h"
 
 
 
@@ -26,6 +28,7 @@ BOOL isBlink = YES;
 @synthesize blinkTimer = _blinkTimer;
 @synthesize login = _login;
 @synthesize nav = _nav;
+@synthesize tips = _tips;
 
 
 
@@ -58,32 +61,74 @@ BOOL isBlink = YES;
 }
 
 - (void)loginViewSwitch:(NSString *)user_type{
-    NSString *json = @"[{\"content\":\"软件氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可飞机上看了几个快乐撒谎的感觉卡数据库连接可拉伸感觉sjfkjaskljfklasjgkjsdklgjkl啊数据库附近阿卡丽结果看了就欧佩克感觉撒开了的更好看喇叭\",\"similarity\":1.0E9,\"title\":\"软件\",\"titleShow\":\"软件\",\"topic_id\":1430,\"uuid\":\"ffeb8156-e054-4345-bd3f-95eb3f8a290f\"},{\"content\":\" 亲爱的同事们\",\"similarity\":647137,\"title\":\"收集心愿单啦~大家有什么想看的书、期刊杂志？请跟帖~\",\"titleShow\":\"收集心愿单啦~大家有什么想看的书、期刊杂\",\"topic_id\":999,\"uuid\":\"2ba15a95-0fe2-4440-a651-fa9c3b9a58f9\"},{\"content\":\"软件\",\"similarity\":1.0E9,\"title\":\"软件\",\"titleShow\":\"软件\",\"topic_id\":1430,\"uuid\":\"ffeb8156-e054-4345-bd3f-95eb3f8a290f\"},{\"content\":\" 亲爱的同事们：是机房环境卡号福建海事局和放假撒更换即可上飞机尽快放假撒发货就卡死了回复就撒谎发几十块的法律dfkjdskfjkds刷卡就付款了按实际付款了撒房价开始\",\"similarity\":647137,\"title\":\"收集心愿单啦~大家有什么想看的书、期刊杂志？请跟帖~\",\"titleShow\":\"收集心愿单啦~大家有什么想看的书、期刊杂\",\"topic_id\":999,\"uuid\":\"2ba15a95-0fe2-4440-a651-fa9c3b9a58f9\"}]";
+    [_tips showLoadingWithContent:@"载入中..."];
     
-//    NSString *json = @"[{\"content\":\"【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？\",\"created_at\":{\"date\":3,\"day\":2,\"hours\":11,\"minutes\":45,\"month\":8,\"nanos\":0,\"seconds\":9,\"time\":1378179909000,\"timezoneOffset\":-480,\"year\":113},\"source_id\":23},{\"content\":\"推荐几个免费好用的软件\",\"created_at\":{\"date\":3,\"day\":2,\"hours\":1,\"minutes\":12,\"month\":8,\"nanos\":0,\"seconds\":16,\"time\":1378141936000,\"timezoneOffset\":-480,\"year\":113},\"source_id\":24},[{\"access_token\":\"\",\"certCode\":\"\",\"email\":\"\",\"password\":\"\",\"realname\":\"\",\"type\":\"\",\"user_id\":1,\"user_info\":\"\",\"username\":\"刘紫薇\"},{\"access_token\":\"\",\"certCode\":\"\",\"email\":\"\",\"password\":\"\",\"realname\":\"\",\"type\":\"\",\"user_id\":1,\"user_info\":\"\",\"username\":\"刘的减肥垃圾是否是科技紫薇\"}]]";
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSArray *feedBack = [NSJSONSerialization JSONObjectWithData: [json dataUsingEncoding:NSUTF8StringEncoding] options: NSJSONReadingMutableContainers error: nil];
+    //make url request
+    NSURL *url = [NSURL URLWithString:[Utils getServerURL]];
+    AFHTTPClient *httpClient = [[[AFHTTPClient alloc] initWithBaseURL:url]autorelease];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     
-    UIViewController *info;
-    if ([user_type isEqualToString:@"admin"]){
-        info = [[AdminViewController alloc] initWithData:feedBack andMainController:self];
-    }
-    else {
-        info = [[UserViewController alloc] initWithData:feedBack andMainController:self];
-    }
+    NSString *request_type = @"mobile";
+    NSString *access_token = [defaults objectForKey:userToken];
     
-    _nav = [[UINavigationController alloc] initWithRootViewController:info];
-    [info release];
+    [params setObject:request_type forKey:@"request_type"];
+    [params setObject:(access_token ? access_token : @"") forKey:@"access_token"];
     
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [UIView beginAnimations:nil context:context];
-    [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationDuration:loadingFinishedAnimate];
+    NSString *path = [user_type isEqualToString:@"admin"] ? @"EBP1/communicationAjaxAction_getConnectionRecommend.action" : @"EBP1/communicationAjaxAction_getSourcesYesterdayAndToday.action";
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:path parameters:params];
     
-    [_login.view removeFromSuperview];
-    [self.view addSubview:_nav.view];
-    [UIView commitAnimations];
+    //put request
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        [_tips hiddenLoading];
+        
+        NSDictionary *feedback = [[NSDictionary alloc] initWithDictionary:JSON];
+        NSString *result = [feedback objectForKey:@"flag"];
+        
+        if ([result isEqualToString:@"success_get_connection_recommend"] || [result isEqualToString:@"success_get_sources"]){
+            UIViewController *info;
+            if ([user_type isEqualToString:@"admin"]){
+                info = [[AdminViewController alloc] initWithData:[feedback objectForKey:@"connection"] andMainController:self];
+            }
+            else {
+                info = [[UserViewController alloc] initWithData:[feedback objectForKey:@"source"] andMainController:self];
+            }
+            
+            _nav = [[UINavigationController alloc] initWithRootViewController:info];
+            [info release];
+            
+            CGContextRef context = UIGraphicsGetCurrentContext();
+            [UIView beginAnimations:nil context:context];
+            [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            [UIView setAnimationDuration:loadingFinishedAnimate];
+            
+            [_login.view removeFromSuperview];
+            [self.view addSubview:_nav.view];
+            [UIView commitAnimations];
+        }
+        else {
+            NSString *err_msg;
+            if ([result isEqualToString:@"fail_to_get_user_by_accesstoken"]){
+                err_msg = @"授权未成功";
+            }
+            else if ([result isEqualToString:@"unknown_request_type"]){
+                err_msg = @"请求类型错误";
+            }
+            else {
+                err_msg = result;
+            }
+            [_tips showTipsWithTitle:@"载入错误" andMessage:err_msg andDuration:TipsShowTime];
+        }
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        [_tips hiddenLoading];
+        [_tips showErrorAlertWithTitle:@"网络错误" andMessage:@"少年乃确定网络连接好了" andButtonTitle:@"囧"];
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    }];
+    [operation start];
 }
 
 - (void)logoutViewSwitch{
@@ -108,6 +153,7 @@ BOOL isBlink = YES;
         _login = [[LoginViewController alloc] initWithParent:self];
         _cover = [[UIImageView alloc] initWithFrame:allFullScreenRect];
         _button = [[UIButton alloc] initWithFrame:CGRectMake(136, 480-48, 48, 48)];
+        _tips = [[tipsAlert alloc] initWith:self.view];
     }
     return self;
 }
@@ -115,7 +161,6 @@ BOOL isBlink = YES;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [self.view addSubview:_login.view];
 
     [_cover setImage:[UIImage imageNamed:@"banner"]];
@@ -143,6 +188,7 @@ BOOL isBlink = YES;
     [self setButton:nil];
     [self setCover:nil];
     [self setLogin:nil];
+    [self setTips:nil];
     [super viewDidUnload];
 }
 
@@ -151,6 +197,7 @@ BOOL isBlink = YES;
     [_cover release];
     [_blinkTimer release];
     [_login release];
+    [_tips release];
     [super dealloc];
 }
 

@@ -8,11 +8,9 @@
 
 #import "Util.h"
 
-#if TARGET_IPHONE_SIMULATOR
-NSString* const SERVER_URL = @"http://localhost:3000";
-#else
-NSString* const SERVER_URL = @"http://easy-follow.com";
-#endif
+
+NSString* const SERVER_URL = @"http://9.123.148.201:8080";
+
 
 
 @implementation Utils
@@ -25,6 +23,17 @@ NSString* const SERVER_URL = @"http://easy-follow.com";
     [dateFormatter setDateFormat:@"HH:mm yyyy/MM/dd"];
     NSString *timeStr = [dateFormatter stringFromDate:date];
     return timeStr;
+}
+
++ (NSString *)getServerURL{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *url = [defaults objectForKey:@"server_url"];
+    return (url && ![url isEqualToString:@""] ? url : SERVER_URL);
+}
+
++ (void) saveServerURL:(NSString *)url{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[NSString stringWithFormat:@"http://%@", url] forKey:@"server_url"];
 }
 
 @end

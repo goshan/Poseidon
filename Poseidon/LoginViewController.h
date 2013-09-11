@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "gTextField.h"
+#import "tipsAlert.h"
 
 @class MainViewController;
 
@@ -34,6 +35,11 @@
 @property (retain, nonatomic) UIImageView *productInfo;
 
 @property (retain, nonatomic) MainViewController *parent;
+
+@property (retain, nonatomic) tipsAlert *tips;
+
+@property (retain, nonatomic) UITextField *url;
+
 
 
 

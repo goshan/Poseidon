@@ -53,6 +53,10 @@
     [_bg setImage:backgroundImage];
 }
 
+- (void) setPassword{
+    _text.secureTextEntry = YES;
+}
+
 - (void) setTextContent:(NSString *)content{
     _text.text = content;
 }
@@ -61,8 +65,16 @@
     return _text.text;
 }
 
+- (void) setClearButtonShow{
+    _text.clearButtonMode = UITextFieldViewModeWhileEditing;
+}
+
 - (void)setDelegate:(id<UITextFieldDelegate>) delegate{
     _text.delegate = delegate;
+}
+
+- (void) releaseInput{
+    [_text resignFirstResponder];
 }
 
 // Only override drawRect: if you perform custom drawing.

@@ -10,6 +10,8 @@
 #import "Util.h"
 #import "ConnectionViewController.h"
 #import "LibraryViewController.h"
+#import "AFHTTPClient.h"
+#import "AFJSONRequestOperation.h"
 
 
 
@@ -24,6 +26,7 @@ BOOL isConnection = YES;
 @synthesize library = _library;
 @synthesize main = _main;
 @synthesize content = _content;
+@synthesize tips = _tips;
 
 
 
@@ -40,25 +43,70 @@ BOOL isConnection = YES;
     if (!isConnection){
         isConnection = YES;
         
-        NSString *json = @"[{\"content\":\"软件氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可氨基酸djfklajsgkljs是看过了；阿卡过来就好了就撒了就好了卡价格了的开发金卡送积分卡机是否可垃圾阿三开了房间看来是结果看了几十块了关键时刻了解对方可拉伸尽快阿娇快发快乐积分卡即可飞机上看了几个快乐撒谎的感觉卡数据库连接可拉伸感觉sjfkjaskljfklasjgkjsdklgjkl啊数据库附近阿卡丽结果看了就欧佩克感觉撒开了的更好看喇叭\",\"similarity\":1.0E9,\"title\":\"软件\",\"titleShow\":\"软件\",\"topic_id\":1430,\"uuid\":\"ffeb8156-e054-4345-bd3f-95eb3f8a290f\"},{\"content\":\" 亲爱的同事们\",\"similarity\":647137,\"title\":\"收集心愿单啦~大家有什么想看的书、期刊杂志？请跟帖~\",\"titleShow\":\"收集心愿单啦~大家有什么想看的书、期刊杂\",\"topic_id\":999,\"uuid\":\"2ba15a95-0fe2-4440-a651-fa9c3b9a58f9\"},{\"content\":\"软件\",\"similarity\":1.0E9,\"title\":\"软件\",\"titleShow\":\"软件\",\"topic_id\":1430,\"uuid\":\"ffeb8156-e054-4345-bd3f-95eb3f8a290f\"},{\"content\":\" 亲爱的同事们：是机房环境卡号福建海事局和放假撒更换即可上飞机尽快放假撒发货就卡死了回复就撒谎发几十块的法律dfkjdskfjkds刷卡就付款了按实际付款了撒房价开始\",\"similarity\":647137,\"title\":\"收集心愿单啦~大家有什么想看的书、期刊杂志？请跟帖~\",\"titleShow\":\"收集心愿单啦~大家有什么想看的书、期刊杂\",\"topic_id\":999,\"uuid\":\"2ba15a95-0fe2-4440-a651-fa9c3b9a58f9\"}]";
+        [_tips showLoadingWithContent:@"载入中..."];
         
-        NSArray *feedBack = [NSJSONSerialization JSONObjectWithData: [json dataUsingEncoding:NSUTF8StringEncoding] options: NSJSONReadingMutableContainers error: nil];
-        self.content = feedBack;
-        [_tableView reloadData];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
-        CGRect frame = _connection.frame;
-        frame.origin.y = 416-45;
-        frame.size.height = 45;
-        [_connection setFrame:frame];
-        [_connection setBackgroundImage:[UIImage imageNamed:@"connectionButtonClick"] forState:UIControlStateNormal];
+        //make url request
+        NSURL *url = [NSURL URLWithString:[Utils getServerURL]];
+        AFHTTPClient *httpClient = [[[AFHTTPClient alloc] initWithBaseURL:url]autorelease];
+        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
         
-        frame = _library.frame;
-        frame.origin.y = 416-39;
-        frame.size.height = 39;
-        [_library setFrame:frame];
-        [_library setBackgroundImage:[UIImage imageNamed:@"libButton"] forState:UIControlStateNormal];
+        NSString *request_type = @"mobile";
+        NSString *access_token = [defaults objectForKey:userToken];
         
-        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"connectionNav"] forBarMetrics:UIBarMetricsDefault];
+        [params setObject:request_type forKey:@"request_type"];
+        [params setObject:(access_token ? access_token : @"") forKey:@"access_token"];
+        
+        NSString *path = @"EBP1/communicationAjaxAction_getConnectionRecommend.action";
+        NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:path parameters:params];
+        
+        //put request
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            [_tips hiddenLoading];
+            
+            NSDictionary *feedback = [[NSDictionary alloc] initWithDictionary:JSON];
+            NSString *result = [feedback objectForKey:@"flag"];
+            
+            if ([result isEqualToString:@"success_get_connection_recommend"]){
+                self.content = [feedback objectForKey:@"connection"];
+                [_tableView reloadData];
+                
+                CGRect frame = _connection.frame;
+                frame.origin.y = 416-45;
+                frame.size.height = 45;
+                [_connection setFrame:frame];
+                [_connection setBackgroundImage:[UIImage imageNamed:@"connectionButtonClick"] forState:UIControlStateNormal];
+                
+                frame = _library.frame;
+                frame.origin.y = 416-39;
+                frame.size.height = 39;
+                [_library setFrame:frame];
+                [_library setBackgroundImage:[UIImage imageNamed:@"libButton"] forState:UIControlStateNormal];
+                
+                [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"connectionNav"] forBarMetrics:UIBarMetricsDefault];
+            }
+            else {
+                NSString *err_msg;
+                if ([result isEqualToString:@"fail_to_get_user_by_accesstoken"]){
+                    err_msg = @"授权未成功";
+                }
+                else if ([result isEqualToString:@"unknown_request_type"]){
+                    err_msg = @"登陆类型错误";
+                }
+                else {
+                    err_msg = result;
+                }
+                [_tips showTipsWithTitle:@"登陆错误" andMessage:err_msg andDuration:TipsShowTime];
+            }
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+            [_tips hiddenLoading];
+            [_tips showErrorAlertWithTitle:@"网络错误" andMessage:@"少年乃确定网络连接好了" andButtonTitle:@"囧"];
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        }];
+        [operation start];
     }
 }
 
@@ -66,25 +114,71 @@ BOOL isConnection = YES;
     if (isConnection){
         isConnection = NO;
         
-        NSString *json = @"[{\"content\":\"【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？【2013网络流行词】何弃疗、我伙呆、人干事、不明觉厉、人艰不拆、说闹觉余、累觉不爱、火钳刘明......还有不约而同......这些2013网络流行词，你常用哪几个？\",\"created_at\":{\"date\":3,\"day\":2,\"hours\":11,\"minutes\":45,\"month\":8,\"nanos\":0,\"seconds\":9,\"time\":1378179909000,\"timezoneOffset\":-480,\"year\":113},\"source_id\":23},{\"content\":\"推荐几个免费好用的软件\",\"created_at\":{\"date\":3,\"day\":2,\"hours\":1,\"minutes\":12,\"month\":8,\"nanos\":0,\"seconds\":16,\"time\":1378141936000,\"timezoneOffset\":-480,\"year\":113},\"source_id\":24},[{\"access_token\":\"\",\"certCode\":\"\",\"email\":\"\",\"password\":\"\",\"realname\":\"\",\"type\":\"\",\"user_id\":1,\"user_info\":\"\",\"username\":\"刘紫薇\"},{\"access_token\":\"\",\"certCode\":\"\",\"email\":\"\",\"password\":\"\",\"realname\":\"\",\"type\":\"\",\"user_id\":1,\"user_info\":\"\",\"username\":\"刘的减肥垃圾是否是科技紫薇\"}]]";
+        [_tips showLoadingWithContent:@"载入中..."];
         
-        NSArray *feedBack = [NSJSONSerialization JSONObjectWithData: [json dataUsingEncoding:NSUTF8StringEncoding] options: NSJSONReadingMutableContainers error: nil];
-        self.content = feedBack;
-        [_tableView reloadData];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
-        CGRect frame = _connection.frame;
-        frame.origin.y = 416-39;
-        frame.size.height = 39;
-        [_connection setFrame:frame];
-        [_connection setBackgroundImage:[UIImage imageNamed:@"connectionButton"] forState:UIControlStateNormal];
+        //make url request
+        NSURL *url = [NSURL URLWithString:[Utils getServerURL]];
+        AFHTTPClient *httpClient = [[[AFHTTPClient alloc] initWithBaseURL:url]autorelease];
+        NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
         
-        frame = _library.frame;
-        frame.origin.y = 416-45;
-        frame.size.height = 45;
-        [_library setFrame:frame];
-        [_library setBackgroundImage:[UIImage imageNamed:@"libButtonClick"] forState:UIControlStateNormal];
+        NSString *request_type = @"mobile";
+        NSString *access_token = [defaults objectForKey:userToken];
         
-        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"libNav"] forBarMetrics:UIBarMetricsDefault];
+        [params setObject:request_type forKey:@"request_type"];
+        [params setObject:(access_token ? access_token : @"") forKey:@"access_token"];
+        
+        NSString *path = @"EBP1/communicationAjaxAction_getAllSourceForMobile.action";
+        NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:path parameters:params];
+        
+        //put request
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            [_tips hiddenLoading];
+            
+            NSDictionary *feedback = [[NSDictionary alloc] initWithDictionary:JSON];
+            NSString *result = [feedback objectForKey:@"flag"];
+            
+            if ([result isEqualToString:@"success_get_all_sources"]){
+                self.content = [feedback objectForKey:@"source"];
+                [_tableView reloadData];
+                
+                CGRect frame = _connection.frame;
+                frame.origin.y = 416-39;
+                frame.size.height = 39;
+                [_connection setFrame:frame];
+                [_connection setBackgroundImage:[UIImage imageNamed:@"connectionButton"] forState:UIControlStateNormal];
+                
+                frame = _library.frame;
+                frame.origin.y = 416-45;
+                frame.size.height = 45;
+                [_library setFrame:frame];
+                [_library setBackgroundImage:[UIImage imageNamed:@"libButtonClick"] forState:UIControlStateNormal];
+                
+                [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"libNav"] forBarMetrics:UIBarMetricsDefault];
+
+            }
+            else {
+                NSString *err_msg;
+                if ([result isEqualToString:@"fail_to_get_user_by_accesstoken"]){
+                    err_msg = @"授权未成功";
+                }
+                else if ([result isEqualToString:@"unknown_request_type"]){
+                    err_msg = @"请求类型错误";
+                }
+                else {
+                    err_msg = result;
+                }
+                [_tips showTipsWithTitle:@"载入错误" andMessage:err_msg andDuration:TipsShowTime];
+            }
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+            [_tips hiddenLoading];
+            [_tips showErrorAlertWithTitle:@"网络错误" andMessage:@"少年乃确定网络连接好了" andButtonTitle:@"囧"];
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        }];
+        [operation start];
     }
 }
 
@@ -99,6 +193,7 @@ BOOL isConnection = YES;
         _library = [[UIButton alloc] initWithFrame:CGRectMake(160, 416-39, 160, 39)];
         self.main = main;
         self.content = data;
+        _tips = [[tipsAlert alloc] initWith:self.view];
         
         isConnection = YES;
     }
@@ -160,6 +255,7 @@ BOOL isConnection = YES;
     [self setLibrary:nil];
     [self setMain:nil];
     [self setContent:nil];
+    [self setTips:nil];
     [super viewDidUnload];
 }
 
@@ -170,6 +266,7 @@ BOOL isConnection = YES;
     [_library release];
     [_main release];
     [_content release];
+    [_tips release];
     [super dealloc];
 }
 
@@ -229,7 +326,6 @@ BOOL isConnection = YES;
         cellContent.alpha = 0.7;
         cellContent.lineBreakMode = NSLineBreakByWordWrapping;
         cellContent.numberOfLines = 0;
-        [cellContent sizeToFit];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -275,7 +371,6 @@ BOOL isConnection = YES;
         cellContent.alpha = 0.7;
         cellContent.lineBreakMode = NSLineBreakByWordWrapping;
         cellContent.numberOfLines = 0;
-        [cellContent sizeToFit];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         

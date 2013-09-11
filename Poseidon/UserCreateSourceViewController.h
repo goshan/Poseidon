@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "tipsAlert.h"
 
 @interface UserCreateSourceViewController : UIViewController
 
@@ -16,6 +17,7 @@
 @property (retain, nonatomic) UIBarButtonItem *cancel;
 @property (retain, nonatomic) UIImageView *bg;
 @property (retain, nonatomic) UITextView *input;
+@property (retain, nonatomic) tipsAlert *tips;
 
 
 
